@@ -4,7 +4,7 @@ Research artifact for **Task Quality and Output Reliability in Kazakh Named Enti
 
 This project compares fine-tuned multilingual encoders with four-shot language models on **KazNERD** named entity recognition (NER) and **KazSAnDRA** binary sentiment analysis (SA). It separates task quality from two distinct output effects: constraints applied during generation and acceptance rules applied to already generated answers.
 
-**Author:** Kartam Aruzhan, Astana IT University · **Artifact version:** 0.4.1
+**Author:** Kartam Aruzhan, Astana IT University · **Artifact version:** 0.4.2
 
 [Download the standalone supplement](https://github.com/aruzhanimm/kazakh-nlp-output-reliability/releases/download/v0.4.0/kazakh_nlp_supplement.zip) · [Read its two-page guide](docs/SUPPLEMENTARY_GUIDE.pdf)
 
@@ -88,6 +88,8 @@ python -m unittest discover -s src/research_execution_20261112/final_analysis -p
 
 Start with the [scientific specification](specification/README.txt), [experimental design](docs/EXPERIMENTS.md) and [source coverage guide](docs/SOURCE_COVERAGE.md). The [reproduction guide](docs/REPRODUCIBILITY.md) distinguishes regenerating analysis outputs from running models again.
 
+Version 0.4.2 documents the exact panel-selection procedure, checkpoint identities and internally dated protocol records in the [method provenance guide](docs/METHOD_PROVENANCE.md). The protocol records are internal evidence, not an external preregistration. The accepted inputs, saved outputs and results remain unchanged.
+
 ## Scope and interpretation
 
 Encoders use full task training data; prompted systems receive four training demonstrations selected with development evidence. This is a comparison of deployment choices with different supervision budgets. It does not isolate model architecture under equal annotation budgets.
@@ -105,7 +107,7 @@ Citation metadata is provided in [`CITATION.cff`](CITATION.cff). A versioned rep
   author = {Kartam, Aruzhan},
   title = {Task Quality and Output Reliability in Kazakh Named Entity Recognition and Sentiment Analysis},
   year = {2026},
-  howpublished = {Research artifact, version 0.4.1},
+  howpublished = {Research artifact, version 0.4.2},
   url = {https://github.com/aruzhanimm/kazakh-nlp-output-reliability}
 }
 ```

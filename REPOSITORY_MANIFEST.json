@@ -1,7 +1,7 @@
 {
-  "version": "0.4.1",
-  "created_utc": "2026-11-19T12:42:04.835885+00:00",
-  "scope": "Clean research artifact: source, exact specifications, primary per-item evidence and reproducible analysis; presentation revision uses unchanged accepted results and evidence",
+  "version": "0.4.2",
+  "created_utc": "2026-11-19T12:52:03.409692+00:00",
+  "scope": "Research artifact with unchanged accepted evidence and results; presentation and factual method-provenance documentation",
   "files": [
     {
       "path": ".gitattributes",
@@ -16,12 +16,12 @@
     {
       "path": "CITATION.cff",
       "bytes": 515,
-      "sha256": "ba8a5cae65ef36dee5c41e1e6318d3c3e2efd944b3ce101a542f646ccceb2490"
+      "sha256": "2b6100ec264d476aa6d174e1815dd6eb2888ff9c44f5e5b9b2856682d8027b23"
     },
     {
       "path": "README.md",
-      "bytes": 7686,
-      "sha256": "5a9270732c89af4e14d8659493d0db8ccdd11ddf8ae27be78c72cacb22810530"
+      "bytes": 8013,
+      "sha256": "f1ff5bcc56c03efc19f7c8b4d9cbfb64776a4af41817100e6ca5b2071618ebac"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -334,6 +334,11 @@
       "sha256": "7a9dc1cd99b27ba21e26756d5375b5822160fd40a17d2f01eb37512c445ab4d8"
     },
     {
+      "path": "docs/METHOD_PROVENANCE.md",
+      "bytes": 4890,
+      "sha256": "94d5a98a1ea8eeea2436d816b985d4f86664ed0251cccdaed6d0b18ce80258fc"
+    },
+    {
       "path": "docs/REPRODUCIBILITY.md",
       "bytes": 5158,
       "sha256": "311f9b92104f68b6da6588714f7f72c26526c627884a5fd3a18325d6733813d5"
@@ -520,8 +525,8 @@
     },
     {
       "path": "specification/GEMMA_CONDITIONS.json",
-      "bytes": 1167,
-      "sha256": "bb73080fd39506fd36b3e277cfafb879b2ef3439ff33c8228f1d87764975ac3e"
+      "bytes": 1887,
+      "sha256": "a16bbec5ab77d4708222d05bb0a7bf7b90aaca2d5ba31ce3c134826df8d23f4f"
     },
     {
       "path": "specification/LOCAL_LLM_CONDITIONS.json",
@@ -529,9 +534,19 @@
       "sha256": "97cc21dc090c995525181b4bc7c30869b64c9c24cb53d9694fee02aef6064164"
     },
     {
+      "path": "specification/PANEL_SELECTION_VERIFICATION.json",
+      "bytes": 1327,
+      "sha256": "29245dc37543b40a03671189ee710a3dd7cce446092d1b695f49d48bfe4d6d7c"
+    },
+    {
+      "path": "specification/PROTOCOL_TIMELINE.json",
+      "bytes": 11208,
+      "sha256": "33218dc8757c538fd624b56f9788220b52bbf977c8954c307e25f27bf101286f"
+    },
+    {
       "path": "specification/README.txt",
-      "bytes": 3102,
-      "sha256": "f4263da3d89f6ec0213c6e86d8c9dcb5358e287c60d1e7b792edb5c4fc8a1187"
+      "bytes": 3449,
+      "sha256": "adf9db4680d051db298d46d024d5f8416240b2dde9f04463e18432c92294c6f6"
     },
     {
       "path": "specification/SHARED_PROMPTS.json",
@@ -545,8 +560,8 @@
     },
     {
       "path": "specification/SPECIFICATION_MANIFEST.json",
-      "bytes": 1324,
-      "sha256": "e429df749afd32dce747d13b6027b0fb0adcf253cc34294a439f19afc99421e2"
+      "bytes": 1630,
+      "sha256": "c775af405f4d6fb9a07f45826537d7c05d75dbdb76f955a5b516a41c170a5631"
     },
     {
       "path": "specification/TIMING_SCOPE.json",
@@ -1292,6 +1307,11 @@
       "path": "src/stage_preflight/views.py",
       "bytes": 11994,
       "sha256": "410c4479332c38e444d5c109ffb92a4d79cfe02bade747615cd8bba6d3187b1e"
+    },
+    {
+      "path": "src/verify_panel_selection.py",
+      "bytes": 3257,
+      "sha256": "e60a02d972f730fe41c9a12eae30f8a7380f5bee7d9405ea64f446ee5a17fe20"
     },
     {
       "path": "verify_manifest.py",

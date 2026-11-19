@@ -1,0 +1,32 @@
+{
+  "status": "PASS_PANEL_IDS_RECONSTRUCTED_FROM_PINNED_SOURCES",
+  "selection": {
+    "algorithm": "sha256_compact_utf8_json_namespace_seed_task_id_then_lexical_id",
+    "items_per_task": 500,
+    "label_stratification": false,
+    "namespace": "kazakh-final-v2",
+    "seed": 20261110,
+    "test_exclusions": "none_keep_official_test_unchanged"
+  },
+  "tasks": {
+    "ner": {
+      "source_sha256": "359a1f61f6a21280c6c47b4fde9a5adcd07411d62015aa6e32d940c51f163b7a",
+      "official_items": 11307,
+      "selected_items": 500,
+      "ids_and_order_match": true,
+      "released_evidence_membership_matches": true,
+      "first_rank_serialized": "[\"kazakh-final-v2\",20261110,\"ner\",\"ner:test:3005\"]",
+      "first_rank_sha256": "00004968842e53ab9623574317e1a19a09cb096c21472e5cd4c551482c679c67"
+    },
+    "sa": {
+      "source_sha256": "cec729d4fd5dda6e1d73c3ce9d6e5feed01b24be79b8135bfb0a204e3f1e6451",
+      "official_items": 16797,
+      "selected_items": 500,
+      "ids_and_order_match": true,
+      "released_evidence_membership_matches": true,
+      "first_rank_serialized": "[\"kazakh-final-v2\",20261110,\"sa\",\"sa:test:pla020271pla\"]",
+      "first_rank_sha256": "00037012ed846703fe40749cd2d8c454489786e4307904d80cb89f725dcfec85"
+    }
+  },
+  "no_inference_or_scoring": true
+}

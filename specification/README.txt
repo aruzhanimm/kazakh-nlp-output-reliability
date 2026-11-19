@@ -3,10 +3,12 @@ Scientific specification for the primary Kazakh NER and sentiment comparison
 This directory supplements the compact research project in ../. It describes the accepted 500-item panel per task and all 22 primary conditions. Every value was extracted from saved accepted configurations, immutable request packages or observed runtime receipts. Source hashes identify the original evidence; private absolute paths and operational notes are omitted.
 
 Contents
+PANEL_SELECTION_VERIFICATION.json: independent exact-ID reconstruction from pinned official source files.
+PROTOCOL_TIMELINE.json: internally dated, hash-linked protocol records; not an external preregistration.
 ENCODER_CONDITIONS.json: all 12 selected task/model/seed training configurations, development selections, checkpoint hashes and evaluation identities.
 LOCAL_LLM_CONDITIONS.json: Qwen and Sherkala frozen ordinary/schema configurations, model and tokenizer revisions/hashes, native templates, exact generation settings and observed runtime environment.
 SHARED_PROMPTS.json: exact four-shot system/example message prefixes, training row IDs, all 25 NER types and the query templates. The same prefixes were checked across all prompted systems. The query itself contains no gold labels.
-GEMMA_CONDITIONS.json: frozen Gemma model revision, package versions and decoding policy.
+GEMMA_CONDITIONS.json: frozen Gemma model revision, package versions and decoding policy, with recorded runtime-admission and weight-file identities. The appended receipt facts do not claim a new model loading or GPU check.
 API_CONDITIONS.json: requested and returned API identity and task-specific settings. The API alias has no verified immutable snapshot.
 ANALYSIS_POLICY.json: frozen metrics, six primary contrasts, descriptive contrasts, 50,000-draw paired bootstrap and fence-only policy.
 TIMING_SCOPE.json: verified hardware and measurement boundaries for the Qwen/Sherkala NER timings reported in the manuscript.

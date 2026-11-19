@@ -13,16 +13,16 @@
       "sha256": "05d4660be3d911d36afb3f3c762a7799b94f03a5ab0eecee60dd0b97a92f5ac0"
     },
     "GEMMA_CONDITIONS.json": {
-      "bytes": 1167,
-      "sha256": "bb73080fd39506fd36b3e277cfafb879b2ef3439ff33c8228f1d87764975ac3e"
+      "bytes": 1887,
+      "sha256": "a16bbec5ab77d4708222d05bb0a7bf7b90aaca2d5ba31ce3c134826df8d23f4f"
     },
     "LOCAL_LLM_CONDITIONS.json": {
       "bytes": 61776,
       "sha256": "97cc21dc090c995525181b4bc7c30869b64c9c24cb53d9694fee02aef6064164"
     },
     "README.txt": {
-      "bytes": 3102,
-      "sha256": "f4263da3d89f6ec0213c6e86d8c9dcb5358e287c60d1e7b792edb5c4fc8a1187"
+      "bytes": 3449,
+      "sha256": "adf9db4680d051db298d46d024d5f8416240b2dde9f04463e18432c92294c6f6"
     },
     "SHARED_PROMPTS.json": {
       "bytes": 17556,
@@ -35,6 +35,14 @@
     "TIMING_SCOPE.json": {
       "bytes": 706,
       "sha256": "517339422cef55e9e8d38dfeee9539b7e3522e485595253297a2e4d16cc28c3f"
+    },
+    "PANEL_SELECTION_VERIFICATION.json": {
+      "bytes": 1327,
+      "sha256": "29245dc37543b40a03671189ee710a3dd7cce446092d1b695f49d48bfe4d6d7c"
+    },
+    "PROTOCOL_TIMELINE.json": {
+      "bytes": 11208,
+      "sha256": "33218dc8757c538fd624b56f9788220b52bbf977c8954c307e25f27bf101286f"
     }
   }
 }

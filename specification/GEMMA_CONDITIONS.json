@@ -41,5 +41,25 @@
     "e041",
     "e042",
     "e043"
-  ]
+  ],
+  "admission_receipt_identity": {
+    "torch": "2.10.0+cu128",
+    "cuda_build": "12.8",
+    "numpy": "2.5.4",
+    "model_files": {
+      "model.safetensors": {
+        "algorithm": "sha256",
+        "digest": "5a84cb313260ac447237b890387116dfa8682e49a6b44bc585ae8353abbff18d",
+        "size": 23919549408
+      }
+    },
+    "source_ids": [
+      "e040",
+      "e041",
+      "e042"
+    ],
+    "verification_scope": "Recorded accepted runtime-admission and weight-identity receipts. Runtime setup receipts state no GPU use or model weight loading. This documentation export performs no new model load or inference.",
+    "runtime_ready_GPU_used": false,
+    "runtime_ready_weights_loaded": false
+  }
 }

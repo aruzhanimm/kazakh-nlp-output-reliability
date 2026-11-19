@@ -1,0 +1,254 @@
+{
+  "status": "VERIFIED_INTERNAL_ARCHIVED_TIMELINE",
+  "registration_status": "Internal dated hash-linked records, not external preregistration or independent timestamp certification.",
+  "scope": "The final 500-item-per-task evaluation; not a claim that official test material was never accessed earlier.",
+  "document_type": "Public-safe extract; original source documents remain preserved separately. This extract is not an original registration.",
+  "events": [
+    {
+      "event": "Internal scientific and analysis settings freeze",
+      "utc": "2026-11-12T12:55:37.266432+00:00",
+      "source": {
+        "filename": "FREEZE_A.json",
+        "sha256": "3f2b53985f3e70bc4319b8d0cb592c460a8cf5a31f988fcc8b3cdbe783c99a61"
+      }
+    },
+    {
+      "event": "Deterministic final-panel preparation starts",
+      "utc": "2026-11-12T12:55:55.270868+00:00",
+      "source": {
+        "filename": "ACCESS_STARTED.json",
+        "sha256": "830d5f892a0945135900820ab410c102a6ba40e5605983a68aac75ae3c51c3f9"
+      },
+      "bound_freeze_a_sha256": "3f2b53985f3e70bc4319b8d0cb592c460a8cf5a31f988fcc8b3cdbe783c99a61"
+    },
+    {
+      "event": "Final inference freeze with panels and request packages",
+      "utc": "2026-11-12T12:57:43.639571+00:00",
+      "source": {
+        "filename": "FREEZE_B_SERVER.json",
+        "sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225"
+      },
+      "master_source": {
+        "filename": "FREEZE_B_MASTER.json",
+        "sha256": "0be3dbc6a63a4c2655cac6fe7fd62e30db704974b0e41000efc5af9106fdd90c"
+      },
+      "local_projection_source": {
+        "filename": "FREEZE_B_LOCAL.json",
+        "sha256": "83c96a66035cf9ec4d7f925655e31ca8d5f41e49b0a6918ae956036230f9c0f9"
+      },
+      "bound_freeze_a_sha256": "3f2b53985f3e70bc4319b8d0cb592c460a8cf5a31f988fcc8b3cdbe783c99a61"
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "ner_qwen_ordinary4",
+      "utc": "2026-11-12T13:14:59.032428+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "93b417082dcb2d8c9afc489dd7769feeb739ff5a693cebf20ac773ce8d4f992d"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "2b46df8d843905de2422aebda4f7ab0ec9f550170f702b41fceccf47d17edda4"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "bfac22195d454f6d14c4b821affd378b15cf642d86fea414d989cd0ecee95977",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "ner_qwen_schema4",
+      "utc": "2026-11-12T13:34:09.723108+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "2dd0696464cb3b786e273fd31050e85e464b3693baedca223042b0022da4b3c7"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "3c154bea1063a887e4b7ed4c36cffc33dcedb1ac030437d97c6f8f89184ac28f"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "fe8dfc4072e931ad3b5514154b9c5674f895e4ae14ecd3716e65bef931091ec5",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "ner_sherkala_ordinary4",
+      "utc": "2026-11-12T13:04:38.733240+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "e6436306571c546f2feae3245c6631c90353e9a410a7ca4794fc97038858d45b"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "9965947179b32a870b047ce98b5e7c153e833af379e2ec8e90e10c3c7454043b"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "74d1176cb9e8abe5d466ef23d3cd0f11f949eb4577083e7f88a07ef4f788cc96",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "ner_sherkala_schema4",
+      "utc": "2026-11-12T13:26:53.415156+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "8824d5feaf082af5e71633cf4a5ce820c74da716a32227d4dffba2e56415b18e"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "75ae85b99518e639f2647512576340d55ed5a7385384561e12dc1b3083cc46ef"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "0390087c384b1f5ce4ff7ba616205e5c86a1cb27c46ed668948b9dab5477b18b",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "sa_qwen_ordinary4",
+      "utc": "2026-11-12T15:45:32.363304+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "e6eaf61a5df4e329f3f33fc2d6c54a41fed6b585b3044ea3ca5516c5d856707d"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "edd50554ecb7aff04a9d7930dd3bf44d2dde1ecb006d9f05bec83d20308c35c8"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "a3fe16a1b880e10ab77649249be29236caa31783ab8662068f379d2cde67b08f",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First saved model-attempt start",
+      "condition": "sa_sherkala_ordinary4",
+      "utc": "2026-11-12T14:42:18.098752+00:00",
+      "source": {
+        "filename": "0001.outcome.json",
+        "sha256": "2f3ee108b1f6ab510de27a1d4698a894eeadf5ff2b90a334e293773f2f15b984"
+      },
+      "binding_source": {
+        "filename": "RUN_BINDING.json",
+        "sha256": "013e709c4272ad0bc924d7311eb58528b1e35ca88af9fb17518605e27bd45aac"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225",
+      "bound_request_package_sha256": "3d8ee1f59b6efb6a2cd503c24b92f559e1db09882103447fdb6d18780a7910f3",
+      "saved_attempts_checked": 500
+    },
+    {
+      "event": "First generation-start record in the final live item store; separately archived failed-authentication attempts are not included in this timestamp",
+      "condition": "GPT-6.1-Sol final NER/SA",
+      "utc": "2026-11-12T13:08:24.268523+00:00",
+      "source": {
+        "filename": "GENERATION_STARTED.json",
+        "sha256": "0fa248de6ef220f19c82a32a7fb51c6a0412ebb8e146df18f4bd645ecf905df4"
+      },
+      "binding_source": {
+        "filename": "BINDING.json",
+        "sha256": "bac76507bbadf5f224773a31a8a70be343f6b118194969f99d2b753c2c54fe9c"
+      },
+      "bound_freeze_sha256": "83c96a66035cf9ec4d7f925655e31ca8d5f41e49b0a6918ae956036230f9c0f9",
+      "saved_start_records_checked": 1000
+    },
+    {
+      "event": "Gemma execution ready after model load, before 1000 pending requests; not exact per-request start",
+      "condition": "Gemma final NER/SA",
+      "utc": "2026-11-12T14:47:00.343197+00:00",
+      "source": {
+        "filename": "20261112T144700Z.json",
+        "sha256": "835a8cae584d01801c3c900e5fd00294bcfe6469ce310227cd0656d8502880bc"
+      },
+      "binding_source": {
+        "filename": "FREEZE_BINDING.json",
+        "sha256": "39c136e8449a68c42f7fc53174c36b5b995067dc983566f7fff85f146e818f2f"
+      },
+      "bound_freeze_sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225"
+    }
+  ],
+  "settings_fixed": {
+    "primary_contrasts": [
+      [
+        "Qwen_NER_schema4-minus-XLMR_seedmean",
+        "ner",
+        "ner_qwen_schema4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "Sherkala_NER_schema4-minus-XLMR_seedmean",
+        "ner",
+        "ner_sherkala_schema4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "Qwen_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_qwen_ordinary4",
+        "sa_xlmr_seedmean"
+      ],
+      [
+        "Sherkala_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_sherkala_ordinary4",
+        "sa_xlmr_seedmean"
+      ],
+      [
+        "Qwen_NER_schema4-minus-ordinary4",
+        "ner",
+        "ner_qwen_schema4",
+        "ner_qwen_ordinary4"
+      ],
+      [
+        "Sherkala_NER_schema4-minus-ordinary4",
+        "ner",
+        "ner_sherkala_schema4",
+        "ner_sherkala_ordinary4"
+      ]
+    ],
+    "primary_family_K": 6,
+    "bootstrap_replicates": 50000,
+    "bootstrap_seed": 20261111,
+    "selection": {
+      "algorithm": "sha256_compact_utf8_json_namespace_seed_task_id_then_lexical_id",
+      "items_per_task": 500,
+      "label_stratification": false,
+      "namespace": "kazakh-final-v2",
+      "seed": 20261110,
+      "test_exclusions": "none_keep_official_test_unchanged"
+    },
+    "wrapper_policy": {
+      "alignment_and_merge": "unchanged literal whole-token alignment, ontology and all-window ownership merge",
+      "body": "must be valid JSON array under unchanged duplicate-key/nonfinite-constant rejecting parser; any interior triple-backtick sequence rejects unwrapping",
+      "changes": "remove only surrounding fence and outer response whitespace; preserve body bytes and every other generation flag",
+      "conditions": [
+        "ner_qwen_ordinary4",
+        "ner_sherkala_ordinary4",
+        "ner_gemma4_12b_ordinary4",
+        "ner_gpt61sol_ordinary4"
+      ],
+      "eligibility": "completed non-refusal non-runtime-failed response; after outer Unicode str.strip, sole triple-backtick fence; opening/closing delimiter on separate lines",
+      "inference": "descriptive exact typed P/R/F1 only; no new model calls, CI or confirmatory hypothesis",
+      "interpretation": "Sensitivity to this fixed output wrapper under the same parser; not latent language comprehension",
+      "language_tag": "absent or ASCII json, case-insensitive; only spaces/tabs after opening tag",
+      "no_repair": [
+        "no prose extraction",
+        "no bracket repair",
+        "no type/mention edits",
+        "no schema repair",
+        "no fuzzy alignment"
+      ],
+      "primary_predictions_metrics_and_six_comparisons": "unchanged",
+      "scope": "descriptive sensitivity only, all four ordinary prompted NER systems"
+    },
+    "prompt_and_decoding_bindings": "Freeze A pins prompt templates, generation settings, runtime and analysis source hashes. Freeze B pins panels and prepared request-package hashes. Actual run bindings refer to these Freeze B hashes."
+  },
+  "checks": {
+    "freeze_A_B_analysis_policies_equal": true,
+    "public_six_contrasts_and_wrapper_rules_equal": true,
+    "public_wrapper_omits_only_internal_motivation_note": true,
+    "public_source_e001_matches_original": true
+  },
+  "limits": [
+    "Stored internal clocks are the timing evidence; external timestamp certification was not located.",
+    "Encoder admission timestamps were not exhaustively reconstructed in this focused audit.",
+    "Gemma event is execution readiness, not first token time."
+  ]
+}
