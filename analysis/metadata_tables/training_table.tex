@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Training settings from the twelve accepted condition configurations. Seeds are ordered 13, 42, 2026. All conditions record microbatch 8, accumulation 2, effective batch 16, AdamW, weight decay 0.01 and gradient clipping 1.0. Selected epochs are development choices, not final-test outcomes.}
+\label{tab:training_configs}
+\begin{tabular}{llrrrr}
+\toprule
+Task & Encoder & Learning rate & Warmup updates & Horizon updates & Selected epochs\\
+\midrule
+NER & XLM-R & 0.00003 & 1,676 & 27,935 & 5, 5, 5\\
+NER & mBERT & 0.00003 & 1,676 & 27,935 & 5, 5, 5\\
+SA & XLM-R & 0.00001 & 2,510 & 41,845 & 3, 4, 5\\
+SA & mBERT & 0.00001 & 2,510 & 41,845 & 3, 2, 2\\
+\bottomrule
+\end{tabular}
+\end{table*}

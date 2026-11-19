@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Observed generation timings and allocated memory. Local Qwen/Sherkala: instrumented greedy generation including token traces, native decoding and CPU export; Gemma: synchronized model.generate only; API: HTTP elapsed time including network, two concurrent workers. Thus columns describe runs, not a controlled cross-system speed ranking. API output tokens include reasoning; GPU memory is unavailable for API.}
+\label{tab:operations}
+\begin{tabular}{llrrrr}
+\toprule
+Task & System & Median s & P95 s & Peak GiB & Output tokens\\
+\midrule
+NER & Qwen ordinary & 1.82 & 4.11 & 15.25 & 24,506\\
+NER & Qwen schema & 7.71 & 24.13 & 15.25 & 24,454\\
+NER & Sherkala ordinary & 2.29 & 4.00 & 16.38 & 26,469\\
+NER & Sherkala schema & 8.01 & 17.42 & 16.38 & 26,460\\
+SA & Qwen ordinary & 0.23 & 0.27 & 14.35 & 3,000\\
+SA & Sherkala ordinary & 0.25 & 0.27 & 15.71 & 3,000\\
+NER & Gemma 4 12B ordinary & 1.78 & 6.56 & 23.03 & 16,721\\
+NER & GPT-6.1-Sol ordinary & 2.70 & 17.18 & -- & 15,461\\
+SA & Gemma 4 12B ordinary & 0.40 & 0.47 & 22.48 & 3,021\\
+SA & GPT-6.1-Sol ordinary & 2.55 & 17.87 & -- & 5,654\\
+\bottomrule
+\end{tabular}
+\end{table*}

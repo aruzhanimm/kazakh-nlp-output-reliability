@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Prespecified NER wrapper sensitivity on the same 500 saved ordinary responses per model. Strict F1 is the primary result; the secondary branch removes only one whole-answer Markdown JSON fence. No tokens, entities, type labels or alignment rules are otherwise changed. All scores are percentages.}
+\label{tab:fence}
+\begin{tabular}{lrrrrr}
+\toprule
+System & Strict F1 & \multicolumn{3}{c}{Fence-only secondary} & Unwrapped\\\cmidrule(lr){3-5} & & P & R & F1 & /500\\
+\midrule
+Qwen & 13.68 & 18.37 & 10.90 & 13.68 & 0\\
+Sherkala & 28.08 & 20.95 & 42.56 & 28.08 & 0\\
+Gemma 4 12B & 8.16 & 63.78 & 61.25 & 62.49 & 239\\
+GPT-6.1-Sol & 83.73 & 82.06 & 85.47 & 83.73 & 0\\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,20 @@
+{
+  "transformers_version": "5.22.2",
+  "wheel_url": "https://files.pythonhosted.org/packages/ff/bb/cc0b27a3000ddcf4903d3a26983c8b4c9a36050bbaf05675f353e8bcb08c/transformers-5.22.2-py3-none-any.whl",
+  "wheel_sha256": "829c2820aff91730b8ec45a4b8ff4be07f586a140b68a9073998b36fa35297dc",
+  "gemma4_unified_files": [
+    "transformers/models/gemma4_unified/__init__.py",
+    "transformers/models/gemma4_unified/configuration_gemma4_unified.py",
+    "transformers/models/gemma4_unified/feature_extraction_gemma4_unified.py",
+    "transformers/models/gemma4_unified/image_processing_gemma4_unified.py",
+    "transformers/models/gemma4_unified/modeling_gemma4_unified.py",
+    "transformers/models/gemma4_unified/modular_gemma4_unified.py",
+    "transformers/models/gemma4_unified/processing_gemma4_unified.py",
+    "transformers/models/gemma4_unified/video_processing_gemma4_unified.py"
+  ],
+  "model_repo": "google/gemma-4-12B-it",
+  "model_revision": "43c9d014b231474fa7212dbb48a762566c2b255d",
+  "metadata_sha256": "208ccc85fbcdf350f1e97ad6e2389d665fa37701d3061c45b06575d9d778af8c",
+  "no_model_weights_downloaded": true,
+  "no_torch_imported": true
+}

@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Recorded execution environments and technical checks. These descriptions are not final comparative runtime measurements; every final run retains its actual device and settings.}
+\label{tab:compute}
+\centering\footnotesize
+\begin{tabular}{@{}p{34mm}p{125mm}@{}}
+\toprule
+Block & {\raggedright Environment and evidence scope\par}\\
+\midrule
+Eight local encoders & {\raggedright RTX 5060 Ti, nominal 16 GB; PyTorch 2.10.0+cu128, Transformers 4.57.6; FP32/BF16 autocast, SDPA. Three dev8 regressions executed.\par}\\
+Four server SA encoders & {\raggedright Server PyTorch 2.10.0+cu128, Transformers 4.57.6; FP32/BF16 autocast, SDPA. Separate SA mBERT dev8 regression matched exactly.\par}\\
+Qwen/Sherkala & {\raggedright Server RTX A6000 48 GB pool; BF16 eager, XGrammar 0.2.9 for corrected NER schema; native train smoke recorded.\par}\\
+Gemma reference & {\raggedright Separate runtime, Transformers 5.22.2; BF16 SDPA on A6000. Eight training-input requests and native CPU replay checked before final inference.\par}\\
+GPT reference & {\raggedright API low reasoning; up to two concurrent final requests. Provider hardware unavailable; eight technical train calls observed.\par}\\
+\bottomrule
+\end{tabular}
+\end{table*}

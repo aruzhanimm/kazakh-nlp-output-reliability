@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Final encoder F1 by seed (NER micro; SA fixed-binary macro). Mean and sample SD summarize the three separately trained systems; predictions are not ensembled.}
+\label{tab:seeds}
+\begin{tabular}{llrrrrr}
+\toprule
+Task & Model & 13 & 42 & 2026 & Mean & SD\\
+\midrule
+NER & XLM-R & 96.37 & 96.55 & 97.23 & 96.72 & 0.45\\
+NER & mBERT & 96.37 & 96.71 & 96.55 & 96.54 & 0.17\\
+SA & XLM-R & 80.94 & 80.10 & 80.69 & 80.57 & 0.43\\
+SA & mBERT & 77.74 & 80.42 & 80.02 & 79.39 & 1.45\\
+\bottomrule
+\end{tabular}
+\end{table*}

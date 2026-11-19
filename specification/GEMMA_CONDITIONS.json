@@ -1,0 +1,45 @@
+{
+  "configuration": {
+    "all_ner_windows_required": true,
+    "attention": "sdpa",
+    "automatic_retries": false,
+    "batch_size": 1,
+    "conditions": {
+      "ner": "ner_gemma4_12b_ordinary4",
+      "sa": "sa_gemma4_12b_ordinary4"
+    },
+    "do_sample": false,
+    "dtype": "bfloat16",
+    "enable_thinking": false,
+    "generation_workers": 1,
+    "input_ceiling": 8192,
+    "max_new_tokens": {
+      "ner": 768,
+      "sa": 32
+    },
+    "model": "google/gemma-4-12B-it",
+    "ner_truncated_policy": "keep_valid_entities_flag_failure",
+    "panel_items_per_task": 500,
+    "request_order": "interleave_task_preserving_panel_and_window_order",
+    "revision": "43c9d014b231474fa7212dbb48a762566c2b255d",
+    "runtime_packages": {
+      "Pillow": "12.0.0",
+      "accelerate": "1.12.0",
+      "huggingface-hub": "1.31.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.1",
+      "torchvision": "0.25.0+cu128",
+      "transformers": "5.22.2"
+    },
+    "sa_truncated_policy": "INVALID",
+    "seed": 42,
+    "shots": 4
+  },
+  "source_ids": [
+    "e001",
+    "e040",
+    "e041",
+    "e042",
+    "e043"
+  ]
+}

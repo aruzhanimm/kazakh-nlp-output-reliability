@@ -1,0 +1,23 @@
+{
+  "hardware_model": "NVIDIA RTX A6000",
+  "conditions": [
+    "ner_qwen_ordinary4",
+    "ner_qwen_schema4",
+    "ner_sherkala_ordinary4",
+    "ner_sherkala_schema4"
+  ],
+  "precision": "bfloat16",
+  "attention": "eager",
+  "scope": "Instrumented synchronous wall time around generation, including token tracing, generated-ID CPU transfer, decoding and trace reading; model loading and grammar compilation excluded.",
+  "cross_backend_ranking": "Not a controlled cross-backend speed comparison; Gemma generation-only and API HTTP timings have different scopes.",
+  "source_ids": [
+    "e028",
+    "e029",
+    "e030",
+    "e031",
+    "e032",
+    "e033",
+    "e034",
+    "e035"
+  ]
+}

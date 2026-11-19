@@ -1,0 +1,14 @@
+{
+  "status": "TABLES_FROM_VERIFIED_SAVED_STATISTICS",
+  "new_inference_or_bootstrap": false,
+  "source_results_sha256": "7b4b65a2743bddc4eac3ca6882fa16a40575df57d51fee62472c72967cc02b4c",
+  "builder_sha256": "c620b01cef3b6f7e62eef268c9e068160638efc1df0ddeca4488fd47ef7dd931",
+  "output_sha256": {
+    "boundary_results.tex": "c33a0a62d6bd699e49cadf4e8ca97e3afac3d1244cc4e50bf91b6c0eaa8d27f7",
+    "fence_results.tex": "862006b8f30c876e197489561937694e6ef7a289296db5887f6adcf99d713328",
+    "final_seed_results.tex": "80991a3e1e58d918f4bddf442ba011ffbbf35ff984911215ea439e630d78da5c",
+    "operational_results.tex": "a5cde0417f3c2203962d9e98c6795ce192f338c6f0327a36669f7725732dbb32",
+    "sa_class_results.tex": "487b811c9735fca33a8b05afff6f4c1f0107f12e8c49d45179c739083efeb6ea",
+    "sa_confusions.tex": "5499226ee9d9f488a16ec88711bc02fec624651b0e1a54d3cc49f7ad065f51f2"
+  }
+}

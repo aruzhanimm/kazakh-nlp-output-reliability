@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+analysis/regenerated/
+**/matplotlib_cache/
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+raw_responses/
+private/
+*.log

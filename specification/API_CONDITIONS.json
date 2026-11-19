@@ -1,0 +1,56 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "returned_identity": {
+    "model": "gpt-6.1-sol",
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "endpoint": "https://api.openai.com/v1/responses",
+  "date_of_primary_requests": "2026-11-12",
+  "model_snapshot_status": "No verified immutable provider snapshot; the returned alias and raw responses are preserved.",
+  "configuration_by_task": {
+    "ner": {
+      "max_output_tokens": 4096,
+      "model": "gpt-6.1-sol",
+      "reasoning": {
+        "effort": "low"
+      },
+      "service_tier": "default",
+      "store": false,
+      "stream": false,
+      "text": {
+        "format": {
+          "type": "text"
+        }
+      },
+      "tool_choice": "none",
+      "tools": [],
+      "truncation": "disabled"
+    },
+    "sa": {
+      "max_output_tokens": 1024,
+      "model": "gpt-6.1-sol",
+      "reasoning": {
+        "effort": "low"
+      },
+      "service_tier": "default",
+      "store": false,
+      "stream": false,
+      "text": {
+        "format": {
+          "type": "text"
+        }
+      },
+      "tool_choice": "none",
+      "tools": [],
+      "truncation": "disabled"
+    }
+  },
+  "input_ceiling_tokens": 8192,
+  "workers": 2,
+  "automatic_retries": false,
+  "source_ids": [
+    "e044",
+    "e045"
+  ]
+}

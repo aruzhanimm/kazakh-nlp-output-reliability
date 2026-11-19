@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Performance on 500 common test items per task. NER uses exact typed-span micro precision, recall and F1; SA uses fixed-binary macro metrics. Encoder values average three separate seed metrics, not ensemble predictions; SD is seed variability. Intervals are pointwise paired-cluster 95\% intervals conditional on fitted systems. Modern references are descriptive. All values except counts are percentages.}
+\label{tab:final_main}
+\begin{tabular}{llrrrrr}
+\toprule
+Task & System & Precision & Recall & F1 & 95\% interval & Seed SD\\
+\midrule
+NER & XLM-R (3-seed mean) & 96.55 & 96.89 & 96.72 & [95.32, 97.96] & 0.45\\
+NER & mBERT (3-seed mean) & 96.43 & 96.66 & 96.54 & [95.14, 97.77] & 0.17\\
+NER & Qwen ordinary & 18.37 & 10.90 & 13.68 & [10.30, 17.16] & --\\
+NER & Qwen schema & 20.05 & 29.76 & 23.96 & [20.47, 27.46] & --\\
+NER & Sherkala ordinary & 20.95 & 42.56 & 28.08 & [24.77, 31.40] & --\\
+NER & Sherkala schema & 20.85 & 42.56 & 27.99 & [24.68, 31.30] & --\\
+NER & Gemma 4 12B & 71.43 & 4.33 & 8.16 & [5.08, 11.56] & --\\
+NER & GPT-6.1-Sol & 82.06 & 85.47 & 83.73 & [80.77, 86.56] & --\\
+\midrule
+SA & XLM-R (3-seed mean) & 80.94 & 80.24 & 80.57 & [76.14, 84.59] & 0.43\\
+SA & mBERT (3-seed mean) & 80.04 & 78.92 & 79.39 & [74.89, 83.51] & 1.45\\
+SA & Qwen ordinary & 67.38 & 76.42 & 66.60 & [61.99, 70.93] & --\\
+SA & Sherkala ordinary & 74.77 & 79.80 & 75.68 & [71.06, 79.94] & --\\
+SA & Gemma 4 12B & 75.17 & 82.54 & 77.46 & [72.95, 81.69] & --\\
+SA & GPT-6.1-Sol & 77.84 & 85.09 & 80.44 & [76.06, 84.51] & --\\
+\bottomrule
+\end{tabular}
+\end{table*}

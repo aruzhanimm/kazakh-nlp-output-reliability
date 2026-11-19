@@ -1,0 +1,200 @@
+{
+  "format": "kazakh_common500_per_item_evidence_v1",
+  "items_per_task": 500,
+  "conditions": {
+    "ner_gemma4_12b_ordinary4": {
+      "task": "ner",
+      "kind": "gemma",
+      "file": "predictions/ner_gemma4_12b_ordinary4.jsonl"
+    },
+    "ner_gpt61sol_ordinary4": {
+      "task": "ner",
+      "kind": "api",
+      "file": "predictions/ner_gpt61sol_ordinary4.jsonl"
+    },
+    "ner_mbert_seed13": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_mbert_seed13.jsonl"
+    },
+    "ner_mbert_seed2026": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_mbert_seed2026.jsonl"
+    },
+    "ner_mbert_seed42": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_mbert_seed42.jsonl"
+    },
+    "ner_qwen_ordinary4": {
+      "task": "ner",
+      "kind": "local_llm",
+      "file": "predictions/ner_qwen_ordinary4.jsonl"
+    },
+    "ner_qwen_schema4": {
+      "task": "ner",
+      "kind": "local_llm",
+      "file": "predictions/ner_qwen_schema4.jsonl"
+    },
+    "ner_sherkala_ordinary4": {
+      "task": "ner",
+      "kind": "local_llm",
+      "file": "predictions/ner_sherkala_ordinary4.jsonl"
+    },
+    "ner_sherkala_schema4": {
+      "task": "ner",
+      "kind": "local_llm",
+      "file": "predictions/ner_sherkala_schema4.jsonl"
+    },
+    "ner_xlmr_seed13": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_xlmr_seed13.jsonl"
+    },
+    "ner_xlmr_seed2026": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_xlmr_seed2026.jsonl"
+    },
+    "ner_xlmr_seed42": {
+      "task": "ner",
+      "kind": "encoder",
+      "file": "predictions/ner_xlmr_seed42.jsonl"
+    },
+    "sa_gemma4_12b_ordinary4": {
+      "task": "sa",
+      "kind": "gemma",
+      "file": "predictions/sa_gemma4_12b_ordinary4.jsonl"
+    },
+    "sa_gpt61sol_ordinary4": {
+      "task": "sa",
+      "kind": "api",
+      "file": "predictions/sa_gpt61sol_ordinary4.jsonl"
+    },
+    "sa_mbert_seed13": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_mbert_seed13.jsonl"
+    },
+    "sa_mbert_seed2026": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_mbert_seed2026.jsonl"
+    },
+    "sa_mbert_seed42": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_mbert_seed42.jsonl"
+    },
+    "sa_qwen_ordinary4": {
+      "task": "sa",
+      "kind": "local_llm",
+      "file": "predictions/sa_qwen_ordinary4.jsonl"
+    },
+    "sa_sherkala_ordinary4": {
+      "task": "sa",
+      "kind": "local_llm",
+      "file": "predictions/sa_sherkala_ordinary4.jsonl"
+    },
+    "sa_xlmr_seed13": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_xlmr_seed13.jsonl"
+    },
+    "sa_xlmr_seed2026": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_xlmr_seed2026.jsonl"
+    },
+    "sa_xlmr_seed42": {
+      "task": "sa",
+      "kind": "encoder",
+      "file": "predictions/sa_xlmr_seed42.jsonl"
+    }
+  },
+  "ner_types": [
+    "ADAGE",
+    "ART",
+    "CARDINAL",
+    "CONTACT",
+    "DATE",
+    "DISEASE",
+    "EVENT",
+    "FACILITY",
+    "GPE",
+    "LANGUAGE",
+    "LAW",
+    "LOCATION",
+    "MISCELLANEOUS",
+    "MONEY",
+    "NON_HUMAN",
+    "NORP",
+    "ORDINAL",
+    "ORGANISATION",
+    "PERCENTAGE",
+    "PERSON",
+    "POSITION",
+    "PRODUCT",
+    "PROJECT",
+    "QUANTITY",
+    "TIME"
+  ],
+  "source_modules": {
+    "research_execution_20261112/final_evaluation/output_adapter.py": "947e6133b5d27a4d651681240edc6018372bf3f00df59209f799f1e145b65c91",
+    "interface_pilot/alignment.py": "99f5056f8e5a76044af3c69ca0638b01a0e2756b232b7b2683381c56629fc9f9",
+    "ner_evidence_20261111/analysis/strict_ner.py": "4a2a7713e22a44e37a89e9842b778fba7f82f753d94cae44848cffb6a77e5c01",
+    "pilot/scoring.py": "3d7619dc1a0405921cfe412375ca9f0218a7cdf52fa17b125f16ad535a791021",
+    "research_execution_20261112/final_analysis/fence_only_sensitivity.py": "380139b922afc151c0967ed32b1b4bafed900c797e6a470cb6a52cf8a25171bd",
+    "research_execution_20261112/final_analysis/offline_kernel.py": "4560748a2a1d4a908b3bc5dd1ebfe48e66e8941d485ee53e31673cb18d3f47e1"
+  },
+  "source_results_sha256": "7b4b65a2743bddc4eac3ca6882fa16a40575df57d51fee62472c72967cc02b4c",
+  "source_predictions_sha256": {
+    "ner": "3af41b75f8ed489a560a6a24e83504ec6ca80780ecf8884df997e9d1b42f3b6a",
+    "sa": "01c72acc1e1f8414b004dd51747049abdb566f1fed109bb1b1106534b4bf2cae"
+  },
+  "source_panel_sha256": {
+    "ner": "1892a5a893e7fbf1f2c5ae0bb834987ace70c8ff1b84a10a4228a420d8543dc7",
+    "sa": "72aa88cad12fa15d3414f489ee58ed8620e89b42423865167190e2bc6e4ee693"
+  },
+  "source_gold_sha256": {
+    "ner": "6befb227a7355f64afa10a00bcc4dabc493503bd19c03f102428450c7cf7b5a7",
+    "sa": "e1649fd71729c888cb91d754e78b40f49d3b6c246568ace4760e7944be0621ec"
+  },
+  "files": {
+    "DATA_ATTRIBUTION.md": "34f63c05f3d47b39f2ec5610872064c886c565ce22bba460387a027045dbc50d",
+    "EXPECTED_METRICS.json": "0fd303f3978c3d859622279fa6b14cbb6dd4566ea20f3d641b886e837d1e037c",
+    "ner_items.jsonl": "7ecffea1a7cce7c72a1c653f5a80d226ce123147041e1a4fdb0c60988a0a5813",
+    "predictions/ner_gemma4_12b_ordinary4.jsonl": "eadec2e351ecb6715a49e26571f01ea423733b99ea6920c0c3ed6fffdc80ca42",
+    "predictions/ner_gpt61sol_ordinary4.jsonl": "06813dc32ce0a7f24236d73db0086da36e9ffc85667b5ef174b8de8304a4341e",
+    "predictions/ner_mbert_seed13.jsonl": "b654a8c58bdd92ab0170ee94191cd5686a69023dc8ed5a904e1ce7b1786a6668",
+    "predictions/ner_mbert_seed2026.jsonl": "d6673abdf089965549fd308ecb988788ce847ad27685fd59555357f18e821388",
+    "predictions/ner_mbert_seed42.jsonl": "60708c8c7b4658d27f866d2d61bf7f5c437cf19266e018599e84d25ec5c87f4a",
+    "predictions/ner_qwen_ordinary4.jsonl": "83840297971f0bc7bb489b05291293da53bb99ca68005a84886ebb14467a09f9",
+    "predictions/ner_qwen_schema4.jsonl": "26fdb6062ebd9957ad98189a4e1a4e6b61876bc445030f7f94fbfe17e458d11a",
+    "predictions/ner_sherkala_ordinary4.jsonl": "66d1e511c94ab56bc33026a4dbf1eb89be695284d60ecb18b3ce87b756212383",
+    "predictions/ner_sherkala_schema4.jsonl": "54fa41581bf26663437974b47fb0a1fa2d0f9511611f2f9b1134ffa3bcb5998c",
+    "predictions/ner_xlmr_seed13.jsonl": "d3ada46c392f4f88882f4ec9945ad67f1af95f64b33ffd6f9528bede2b5c1810",
+    "predictions/ner_xlmr_seed2026.jsonl": "327eeba4d41e8f77ad4673a9041c9c0ffd66d9ed50d571199320ac7dde2d5292",
+    "predictions/ner_xlmr_seed42.jsonl": "eeb2faf68d3e7684524ebe93217c948034e2ca8a24d3e9e63e8ed356354d5956",
+    "predictions/sa_gemma4_12b_ordinary4.jsonl": "229cdc06e916805486c66aa7648fcdbebb3b1b08a092b957613cbba12be92fbf",
+    "predictions/sa_gpt61sol_ordinary4.jsonl": "8795b717795ec384ecb76c0c9ebb2608ebb0c315bb941c639cdbbcc7504bc056",
+    "predictions/sa_mbert_seed13.jsonl": "1aad38ba7a15f92538772a7636e2f61efb00afcc103145c87858756717c602e6",
+    "predictions/sa_mbert_seed2026.jsonl": "4bf1be1a8f05907040ad8f89464bdd565936d467e1f26c49b573da2fafd47537",
+    "predictions/sa_mbert_seed42.jsonl": "24d18b8092e470d6ddec487da0d740db8cd06412f40d02243400dde05a1fa885",
+    "predictions/sa_qwen_ordinary4.jsonl": "72b1fa511159028166db343c2988882302362a65f69237fcc5f095af725ab21b",
+    "predictions/sa_sherkala_ordinary4.jsonl": "5526a2810159d9b86385c70f5bc70ec6edcc25ecefb78271985f97b400c40cfe",
+    "predictions/sa_xlmr_seed13.jsonl": "42af859a84b4ef700192de5ef5b0eba2cdc101c904654845a311e8b13766e3d4",
+    "predictions/sa_xlmr_seed2026.jsonl": "349846c33799f6e770c801c556aa4e935cde3eb5e2d99d85a9c798ea767ef9ac",
+    "predictions/sa_xlmr_seed42.jsonl": "2b498d4e6d4a9d10c1da735bcad2ffb58c3d3fc41c416d7416ff6259abf98dea",
+    "README.md": "6dde0999b3cef795bffeabeecfdbd609c0bb051582f0b1b2bb1f6bcd20fb93e0",
+    "rescore.py": "cfb9236cc26df680291b3e2eed12dc72216498ccc3ce98a29ba553c00e3c1468",
+    "restore_sa_text.py": "c800faf7c3a6da1e2c8f508ae6391fc431c5f7b8c7de91363a7f18527e810d8a",
+    "sa_items.jsonl": "0ce1f61cf4c45b4fcdc4912e47aac58c4735babd797d4517674981346d3a7d54"
+  },
+  "distribution_scope": "Fixed common500 only; no development runs, rare-type follow-up, model weights, HTTP headers, credentials, private human forms or personal chat history.",
+  "raw_answer_boundary": "Exactly the saved task-answer strings. API transport envelope and Gemma native special-token wrapper are not included; those identity checks remain in the construction provenance.",
+  "sa_source_text_redistributed": false,
+  "source_input_closure_sha256": "8f5c9aad87de62e06050f0f5de6c31be0e594c0307e43dd214fc8090f5e3ebad",
+  "per_item_original_source_hashes_verified": 11000
+}

@@ -1,0 +1,241 @@
+{
+  "policy": {
+    "NER_metric": "exact typed-span micro-F1; rejected candidates add no extra primary FP",
+    "SA_metric": "fixed negative/positive macro-F1, 2x3 confusion with INVALID column",
+    "batch_size": 500,
+    "cluster": "Unicode NFC + collapsed whitespace of COMPLETE original text",
+    "conditions": {
+      "ner_gemma4_12b_ordinary4": {
+        "kind": "gemma",
+        "task": "ner"
+      },
+      "ner_gpt61sol_ordinary4": {
+        "kind": "api",
+        "task": "ner"
+      },
+      "ner_mbert_seed13": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 13,
+        "task": "ner"
+      },
+      "ner_mbert_seed2026": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 2026,
+        "task": "ner"
+      },
+      "ner_mbert_seed42": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 42,
+        "task": "ner"
+      },
+      "ner_qwen_ordinary4": {
+        "kind": "local_llm",
+        "task": "ner"
+      },
+      "ner_qwen_schema4": {
+        "kind": "local_llm",
+        "task": "ner"
+      },
+      "ner_sherkala_ordinary4": {
+        "kind": "local_llm",
+        "task": "ner"
+      },
+      "ner_sherkala_schema4": {
+        "kind": "local_llm",
+        "task": "ner"
+      },
+      "ner_xlmr_seed13": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 13,
+        "task": "ner"
+      },
+      "ner_xlmr_seed2026": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 2026,
+        "task": "ner"
+      },
+      "ner_xlmr_seed42": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 42,
+        "task": "ner"
+      },
+      "sa_gemma4_12b_ordinary4": {
+        "kind": "gemma",
+        "task": "sa"
+      },
+      "sa_gpt61sol_ordinary4": {
+        "kind": "api",
+        "task": "sa"
+      },
+      "sa_mbert_seed13": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 13,
+        "task": "sa"
+      },
+      "sa_mbert_seed2026": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 2026,
+        "task": "sa"
+      },
+      "sa_mbert_seed42": {
+        "kind": "encoder",
+        "model": "mbert",
+        "seed": 42,
+        "task": "sa"
+      },
+      "sa_qwen_ordinary4": {
+        "kind": "local_llm",
+        "task": "sa"
+      },
+      "sa_sherkala_ordinary4": {
+        "kind": "local_llm",
+        "task": "sa"
+      },
+      "sa_xlmr_seed13": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 13,
+        "task": "sa"
+      },
+      "sa_xlmr_seed2026": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 2026,
+        "task": "sa"
+      },
+      "sa_xlmr_seed42": {
+        "kind": "encoder",
+        "model": "xlmr",
+        "seed": 42,
+        "task": "sa"
+      }
+    },
+    "cost_comparison": "descriptive measured scopes only; no clean cross-backend ranking",
+    "descriptive_comparisons": [
+      [
+        "gemma4_12b_NER_ordinary4-minus-XLMR_seedmean",
+        "ner",
+        "ner_gemma4_12b_ordinary4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "gpt61sol_NER_ordinary4-minus-XLMR_seedmean",
+        "ner",
+        "ner_gpt61sol_ordinary4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "gemma4_12b_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_gemma4_12b_ordinary4",
+        "sa_xlmr_seedmean"
+      ],
+      [
+        "gpt61sol_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_gpt61sol_ordinary4",
+        "sa_xlmr_seedmean"
+      ]
+    ],
+    "format": "kazakh_final_analysis_v1",
+    "items_per_task": 500,
+    "missing_conditions_or_records": "stop; never silently omit",
+    "ner_boundary_type_descriptive_diagnostics": {
+      "gold": "strict original IOB2; at most one gold type per exact boundary",
+      "inference": "descriptive counts only; no new confirmatory tests or confidence intervals",
+      "input": "same accepted predicted spans and original gold as primary typed F1",
+      "interpretation": "output boundary detection and conditional type assignment under the fixed parser, not latent language comprehension",
+      "missing_spurious": "missing/spurious exact boundaries; never greedy overlap or nearest-boundary matching",
+      "multi_type_prediction": "count boundary and distinct typed spans separately; exclude that boundary from type-confusion denominator",
+      "status": "prespecified_descriptive_only",
+      "type_confusion": "gold row, predicted column; exact shared boundaries with one predicted type only",
+      "untyped_match": "exact (start,end) endpoint-set equality; types ignored and endpoints deduplicated"
+    },
+    "pointwise_quantiles": [
+      0.025,
+      0.975
+    ],
+    "primary_comparisons": [
+      [
+        "Qwen_NER_schema4-minus-XLMR_seedmean",
+        "ner",
+        "ner_qwen_schema4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "Sherkala_NER_schema4-minus-XLMR_seedmean",
+        "ner",
+        "ner_sherkala_schema4",
+        "ner_xlmr_seedmean"
+      ],
+      [
+        "Qwen_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_qwen_ordinary4",
+        "sa_xlmr_seedmean"
+      ],
+      [
+        "Sherkala_SA_ordinary4-minus-XLMR_seedmean",
+        "sa",
+        "sa_sherkala_ordinary4",
+        "sa_xlmr_seedmean"
+      ],
+      [
+        "Qwen_NER_schema4-minus-ordinary4",
+        "ner",
+        "ner_qwen_schema4",
+        "ner_qwen_ordinary4"
+      ],
+      [
+        "Sherkala_NER_schema4-minus-ordinary4",
+        "ner",
+        "ner_sherkala_schema4",
+        "ner_sherkala_ordinary4"
+      ]
+    ],
+    "primary_family_K": 6,
+    "primary_quantiles": [
+      0.004166666666666667,
+      0.9958333333333333
+    ],
+    "random_seed": 20261111,
+    "raw_reconstruction_required": true,
+    "replicates": 50000,
+    "seed_summary": "mean of three separate metrics; sample SD; no pooled counts or ensemble",
+    "ner_fence_only_descriptive_sensitivity": {
+      "alignment_and_merge": "unchanged literal whole-token alignment, ontology and all-window ownership merge",
+      "body": "must be valid JSON array under unchanged duplicate-key/nonfinite-constant rejecting parser; any interior triple-backtick sequence rejects unwrapping",
+      "changes": "remove only surrounding fence and outer response whitespace; preserve body bytes and every other generation flag",
+      "conditions": [
+        "ner_qwen_ordinary4",
+        "ner_sherkala_ordinary4",
+        "ner_gemma4_12b_ordinary4",
+        "ner_gpt61sol_ordinary4"
+      ],
+      "eligibility": "completed non-refusal non-runtime-failed response; after outer Unicode str.strip, sole triple-backtick fence; opening/closing delimiter on separate lines",
+      "inference": "descriptive exact typed P/R/F1 only; no new model calls, CI or confirmatory hypothesis",
+      "interpretation": "Sensitivity to this fixed output wrapper under the same parser; not latent language comprehension",
+      "language_tag": "absent or ASCII json, case-insensitive; only spaces/tabs after opening tag",
+      "no_repair": [
+        "no prose extraction",
+        "no bracket repair",
+        "no type/mention edits",
+        "no schema repair",
+        "no fuzzy alignment"
+      ],
+      "primary_predictions_metrics_and_six_comparisons": "unchanged",
+      "scope": "descriptive sensitivity only, all four ordinary prompted NER systems"
+    }
+  },
+  "source_ids": [
+    "e001"
+  ]
+}

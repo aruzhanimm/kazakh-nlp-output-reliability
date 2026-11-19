@@ -1,0 +1,40 @@
+{
+  "files": {
+    "ANALYSIS_POLICY.json": {
+      "bytes": 7636,
+      "sha256": "202403ffc8ba4c0b7718ea512a29baa6e54a80609c75f83d39df425502b180bc"
+    },
+    "API_CONDITIONS.json": {
+      "bytes": 1339,
+      "sha256": "5a2c618f553d275d32a85de513931f772cd4114ae989532108c6e076a9e10ce8"
+    },
+    "ENCODER_CONDITIONS.json": {
+      "bytes": 53672,
+      "sha256": "05d4660be3d911d36afb3f3c762a7799b94f03a5ab0eecee60dd0b97a92f5ac0"
+    },
+    "GEMMA_CONDITIONS.json": {
+      "bytes": 1167,
+      "sha256": "bb73080fd39506fd36b3e277cfafb879b2ef3439ff33c8228f1d87764975ac3e"
+    },
+    "LOCAL_LLM_CONDITIONS.json": {
+      "bytes": 61776,
+      "sha256": "97cc21dc090c995525181b4bc7c30869b64c9c24cb53d9694fee02aef6064164"
+    },
+    "README.txt": {
+      "bytes": 3102,
+      "sha256": "f4263da3d89f6ec0213c6e86d8c9dcb5358e287c60d1e7b792edb5c4fc8a1187"
+    },
+    "SHARED_PROMPTS.json": {
+      "bytes": 17556,
+      "sha256": "aa7ad5f9743016352681f397534ce0389b22d4cc55565100e60f01b1178d40a2"
+    },
+    "SOURCE_HASHES.json": {
+      "bytes": 11429,
+      "sha256": "b77480c1e731d7abefb4491c224176a73fec782535fd69c8c20271bd92e1609c"
+    },
+    "TIMING_SCOPE.json": {
+      "bytes": 706,
+      "sha256": "517339422cef55e9e8d38dfeee9539b7e3522e485595253297a2e4d16cc28c3f"
+    }
+  }
+}

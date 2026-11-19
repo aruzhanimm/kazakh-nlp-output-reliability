@@ -1,0 +1,1672 @@
+{
+  "scope": "Accepted primary common500 evaluation",
+  "conditions": [
+    {
+      "condition": "ner_xlmr_seed13",
+      "training": {
+        "task": "ner",
+        "model": "xlmr_base",
+        "seed": 13,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          }
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.9613672912225588,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "d425e6249e38b76484caaa176d2a011042d4b8a8d5fb2bfffde0c23dd82e4ff6",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e004",
+        "e002",
+        "e003",
+        "e005"
+      ]
+    },
+    {
+      "condition": "ner_xlmr_seed42",
+      "training": {
+        "task": "ner",
+        "model": "xlmr_base",
+        "encoder": "xlmr",
+        "seed": 42,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "feature_counts": {
+          "train": 89386,
+          "valid": 11100
+        },
+        "initialization_policy": "fresh pinned pretrained with seed-specific head; never a fine-tuned parent",
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          },
+          "weights_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.9627220041129183,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "d05698f8dbdfabe171dce2cb52f49bd57d0d1f5bc3b4bf61cb008a12b1e1141e",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e006",
+        "e002",
+        "e003",
+        "e007"
+      ]
+    },
+    {
+      "condition": "ner_xlmr_seed2026",
+      "training": {
+        "task": "ner",
+        "model": "xlmr_base",
+        "encoder": "xlmr",
+        "seed": 2026,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "feature_counts": {
+          "train": 89386,
+          "valid": 11100
+        },
+        "initialization_policy": "fresh pinned pretrained with seed-specific head; never a fine-tuned parent",
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          },
+          "weights_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.9607777154608338,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "5eafe14ba507b8a6d7b7ec654fefba72538bbf80964d677d518e4ac6d48206fc",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e008",
+        "e002",
+        "e003",
+        "e009"
+      ]
+    },
+    {
+      "condition": "ner_mbert_seed13",
+      "training": {
+        "task": "ner",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 13,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "feature_counts": {
+          "train": 89386,
+          "valid": 11100
+        },
+        "initialization_policy": "fresh pinned pretrained with seed-specific head; never a fine-tuned parent",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.9571423233568733,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "b60ca2a41c117a972f61526719617bfa995a082208da6dc22cc4c48cd822586b",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e010",
+        "e002",
+        "e003",
+        "e011"
+      ]
+    },
+    {
+      "condition": "ner_mbert_seed42",
+      "training": {
+        "task": "ner",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 42,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "feature_counts": {
+          "train": 89386,
+          "valid": 11100
+        },
+        "initialization_policy": "fresh pinned pretrained with seed-specific head; never a fine-tuned parent",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.957448399641041,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "e64a6501479b991eee595f89db98a3c151a59e635d53a21fb62fa09cb5d42cd1",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e012",
+        "e002",
+        "e003",
+        "e013"
+      ]
+    },
+    {
+      "condition": "ner_mbert_seed2026",
+      "training": {
+        "task": "ner",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 2026,
+        "learning_rate": 3e-05,
+        "training_sentences": 89386,
+        "training_features": 89386,
+        "training_first_subword_labels": 1034279,
+        "development_sentences": 11100,
+        "types": 25,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 5587,
+        "scheduler_horizon_updates": 27935,
+        "warmup_updates": 1676,
+        "scheduler": "linear_warmup_then_linear_decay",
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters, gradients and optimizer states; FP32 cross-entropy",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "summed_CE / all_nonignored_first_subword_labels_in_complete_optimizer_batch",
+        "evaluation": "all_retained_dev_after_each_epoch",
+        "selection": "strictly highest exact-span entity micro-F1; earliest ties",
+        "early_stop": {
+          "patience": 2,
+          "minimum_epochs": 3,
+          "min_delta": 0.0001
+        },
+        "feature_counts": {
+          "train": 89386,
+          "valid": 11100
+        },
+        "initialization_policy": "fresh pinned pretrained with seed-specific head; never a fine-tuned parent",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.9584502038221324,
+        "metric": "exact_span_micro_f1",
+        "checkpoint_sha256": "0d576b28c7f46a4ad65283702c6680513fd4f9d9d2ce2cdd8d625a2ea25c3c7c",
+        "selected_updates_if_in_metadata": 27935
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "O",
+          "B-ADAGE",
+          "I-ADAGE",
+          "B-ART",
+          "I-ART",
+          "B-CARDINAL",
+          "I-CARDINAL",
+          "B-CONTACT",
+          "I-CONTACT",
+          "B-DATE",
+          "I-DATE",
+          "B-DISEASE",
+          "I-DISEASE",
+          "B-EVENT",
+          "I-EVENT",
+          "B-FACILITY",
+          "I-FACILITY",
+          "B-GPE",
+          "I-GPE",
+          "B-LANGUAGE",
+          "I-LANGUAGE",
+          "B-LAW",
+          "I-LAW",
+          "B-LOCATION",
+          "I-LOCATION",
+          "B-MISCELLANEOUS",
+          "I-MISCELLANEOUS",
+          "B-MONEY",
+          "I-MONEY",
+          "B-NON_HUMAN",
+          "I-NON_HUMAN",
+          "B-NORP",
+          "I-NORP",
+          "B-ORDINAL",
+          "I-ORDINAL",
+          "B-ORGANISATION",
+          "I-ORGANISATION",
+          "B-PERCENTAGE",
+          "I-PERCENTAGE",
+          "B-PERSON",
+          "I-PERSON",
+          "B-POSITION",
+          "I-POSITION",
+          "B-PRODUCT",
+          "I-PRODUCT",
+          "B-PROJECT",
+          "I-PROJECT",
+          "B-QUANTITY",
+          "I-QUANTITY",
+          "B-TIME",
+          "I-TIME"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e014",
+        "e002",
+        "e003",
+        "e015"
+      ]
+    },
+    {
+      "condition": "sa_xlmr_seed13",
+      "training": {
+        "task": "sa",
+        "model": "xlmr_base",
+        "encoder": "xlmr",
+        "seed": 13,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          },
+          "weights_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 3,
+        "full_dev_metric": 0.802696278532091,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "67033b62b54d0d4e6cde9bd1ff3cfc74797e614d1049df3b78f594a9fbfb6362",
+        "selected_updates_if_in_metadata": 25107
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e016",
+        "e002",
+        "e003",
+        "e017"
+      ]
+    },
+    {
+      "condition": "sa_xlmr_seed42",
+      "training": {
+        "task": "sa",
+        "model": "xlmr_base",
+        "encoder": "xlmr",
+        "seed": 42,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          },
+          "weights_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 4,
+        "full_dev_metric": 0.8058255362297783,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "2406c4785c4c5bca7e2df86258cbf3a7c44a647bb4731f5d5c0ba2c3c1561428",
+        "selected_updates_if_in_metadata": 33476
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e018",
+        "e002",
+        "e003",
+        "e019"
+      ]
+    },
+    {
+      "condition": "sa_xlmr_seed2026",
+      "training": {
+        "task": "sa",
+        "model": "xlmr_base",
+        "encoder": "xlmr",
+        "seed": 2026,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "FacebookAI/xlm-roberta-base",
+          "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+          "tokenizer_sha256": {
+            "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+            "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+            "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+          },
+          "weights_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 5,
+        "full_dev_metric": 0.8014720454127409,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "d79af4d1c7588204d499f8726ae1fc382843666a9afa4a9cbfd5add393f8d00b",
+        "selected_updates_if_in_metadata": 41845
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "8574792bfefae68f2ce2eae93a4145d95b1232c59e71094bcdcb49dbcb549c97",
+          "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+          "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264"
+        }
+      },
+      "source_ids": [
+        "e020",
+        "e002",
+        "e003",
+        "e021"
+      ]
+    },
+    {
+      "condition": "sa_mbert_seed13",
+      "training": {
+        "task": "sa",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 13,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 3,
+        "full_dev_metric": 0.7928319744841228,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "66f90d75df552fdddf8559ca798217db0de74efe93598f69d1fabc375fb3db72",
+        "selected_updates_if_in_metadata": null
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e022",
+        "e002",
+        "e003",
+        "e023"
+      ]
+    },
+    {
+      "condition": "sa_mbert_seed42",
+      "training": {
+        "task": "sa",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 42,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 2,
+        "full_dev_metric": 0.7958771859084093,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "1201be9b69b11039bf147b9c025ca795cf84c1d49fde26a97cc23bd9bce1d2c1",
+        "selected_updates_if_in_metadata": null
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e024",
+        "e002",
+        "e003",
+        "e025"
+      ]
+    },
+    {
+      "condition": "sa_mbert_seed2026",
+      "training": {
+        "task": "sa",
+        "model": "mbert_base",
+        "encoder": "mbert",
+        "seed": 2026,
+        "learning_rate": 1e-05,
+        "training_features": 133894,
+        "training_examples": 133894,
+        "development_sentences": 16766,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "id2label": {
+          "0": "negative",
+          "1": "positive"
+        },
+        "microbatch": 8,
+        "gradient_accumulation": 2,
+        "effective_batch": 16,
+        "epochs_max": 5,
+        "updates_per_epoch": 8369,
+        "scheduler_horizon_updates": 41845,
+        "warmup_updates": 2510,
+        "optimizer": "AdamW",
+        "weight_decay": 0.01,
+        "gradient_clip": 1.0,
+        "precision": "BF16 autocast; FP32 parameters/gradients/optimizer/CE",
+        "gradient_checkpointing": {
+          "enabled": true,
+          "use_reentrant": false
+        },
+        "attention": "sdpa",
+        "strict_determinism": true,
+        "objective": "sum review CE / actual reviews in complete optimizer batch",
+        "selection": "exact highest full-dev macro-F1; earliest exact tie",
+        "early_stop": {
+          "minimum_epochs": 3,
+          "patience": 2,
+          "min_delta": 0.0001,
+          "threshold_affects": "patience only"
+        },
+        "feature_counts": {
+          "train": 133894,
+          "valid": 16766
+        },
+        "initialization_policy": "fresh pinned pretrained and seed-specific sequence-classification head; full encoder trainable",
+        "decision": "argmax of two logits",
+        "class_weights": null,
+        "sampling": "train-only shuffle(seed+epoch)",
+        "initialization": {
+          "model_id": "google-bert/bert-base-multilingual-cased",
+          "revision": "3f076fdb1ab68d5b2880cb87a0886f315b8146f8",
+          "weights_sha256": "876f584f15ebf14887dec17539c114bb99a032e96b9e72507a51c41e205337fc"
+        }
+      },
+      "selection_result": {
+        "selected_epoch": 2,
+        "full_dev_metric": 0.7980853755618942,
+        "metric": "binary_macro_f1",
+        "checkpoint_sha256": "4db4b82cfd8d627dd91deb870aa46b267436af048d60ff5ac43a1396f7c45b06",
+        "selected_updates_if_in_metadata": null
+      },
+      "evaluation": {
+        "attention": "sdpa",
+        "environment": {
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "cpu_threads": 4,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "tokenizer_files": {
+          "tokenizer.json": "f4a4d5bf7301717e261fafbe26e1eb967f6ba4cb3ae0ab7a29f4642ec229f386",
+          "tokenizer_config.json": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+          "vocab.txt": "fe0fda7c425b48c516fc8f160d594c8022a0808447475c1a7c6d6479763f310c"
+        }
+      },
+      "source_ids": [
+        "e026",
+        "e002",
+        "e003",
+        "e027"
+      ]
+    }
+  ]
+}

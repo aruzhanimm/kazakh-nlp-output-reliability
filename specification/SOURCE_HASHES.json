@@ -1,0 +1,275 @@
+{
+  "description": "SHA256 identities of original accepted evidence used to extract these factual specifications. Original private paths are omitted; these are source identifiers, not a claim that raw evidence is redistributed.",
+  "sources": {
+    "e001": {
+      "description": "Accepted final server freeze for the primary panels",
+      "filename": "FREEZE_B_SERVER.json",
+      "bytes": 26384,
+      "sha256": "4f4f1a0871a2a95277978f2be8bb59973d9af1c1b0793903cda4e77ada272225"
+    },
+    "e002": {
+      "description": "Accepted encoder evaluation bindings",
+      "filename": "RUNTIME_BINDINGS.json",
+      "bytes": 23575,
+      "sha256": "339ed83e8678ac19d993b4753ff5a3011538763c304e5ae2282279416dbfb130"
+    },
+    "e003": {
+      "description": "Selected encoder checkpoints and development scores",
+      "filename": "SELECTED_CHECKPOINTS.json",
+      "bytes": 15363,
+      "sha256": "3fc165152f58aa027fa00f3a418553786d23e2dc187687448efef5801fb9c6c2"
+    },
+    "e004": {
+      "description": "ner_xlmr_seed13 actual training configuration",
+      "filename": "identity.json",
+      "bytes": 6863,
+      "sha256": "fe4f9ddc0b4ebfc676e58a8e6956a9a5d2f310d556e1d01b28728504d8f42236"
+    },
+    "e005": {
+      "description": "ner_xlmr_seed13 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1335,
+      "sha256": "e39236cffd5f340937ca69edeaad120264c8de0eeaabc42dbfa87f91bbc29498"
+    },
+    "e006": {
+      "description": "ner_xlmr_seed42 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 3870,
+      "sha256": "ccd951ba6642f0c6d917cedefbf905143ef3dd415fb7a9b842ee06a7998156da"
+    },
+    "e007": {
+      "description": "ner_xlmr_seed42 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1359,
+      "sha256": "f7a55f47d78ed19b9e299f197cdb9b96251ae0691fccbe91c83a6a9f86b0f697"
+    },
+    "e008": {
+      "description": "ner_xlmr_seed2026 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 3874,
+      "sha256": "fc323d557e6acdb262abf36a5730b7eaa664595770dafb0f71ba720162d3ddcf"
+    },
+    "e009": {
+      "description": "ner_xlmr_seed2026 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1361,
+      "sha256": "0d49a33b0733646c585c7a0a726a2323b7c66d8076bf45913c00485339fef25e"
+    },
+    "e010": {
+      "description": "ner_mbert_seed13 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 3571,
+      "sha256": "ae4c116b3d93183f3e5cf7aa8785671540eebcd6608b4b912ad26246d5ad8a43"
+    },
+    "e011": {
+      "description": "ner_mbert_seed13 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1358,
+      "sha256": "f722a14d6ecbeba5c250b2e8af4b797252f3bea771d5c498f699c0244ca7e946"
+    },
+    "e012": {
+      "description": "ner_mbert_seed42 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 3573,
+      "sha256": "20b0c50727b26add3b2a41f1b1d9aa725f42a8fb99156e1314ffb7bc2ead8859"
+    },
+    "e013": {
+      "description": "ner_mbert_seed42 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1360,
+      "sha256": "c35de36d6ba902383dc72275452154162f69ca3917b3624057b2a556cf963792"
+    },
+    "e014": {
+      "description": "ner_mbert_seed2026 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 3577,
+      "sha256": "35d43ca15a6a38ff26cce20f0822aa2d5c52e152eaab685369b69bb510a0ad5c"
+    },
+    "e015": {
+      "description": "ner_mbert_seed2026 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1362,
+      "sha256": "7c4b47a0f09fe288335e3e691eeff71e8206bd48203dce80d09980a9c45c1c2b"
+    },
+    "e016": {
+      "description": "sa_xlmr_seed13 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2913,
+      "sha256": "a15b32a962e5fbb384dafc75370d1a4bb331306ca99e1786a081bdede1e95c0d"
+    },
+    "e017": {
+      "description": "sa_xlmr_seed13 selected checkpoint metadata",
+      "filename": "epoch_03.json",
+      "bytes": 1353,
+      "sha256": "302bba7f01a033e821379071320a7903410bbac49c6db051311130c60bd219e0"
+    },
+    "e018": {
+      "description": "sa_xlmr_seed42 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2915,
+      "sha256": "c30b659f098dd35cbfd6c9ca90d00e8409d38ef852fc78a6611a6a76485ab44a"
+    },
+    "e019": {
+      "description": "sa_xlmr_seed42 selected checkpoint metadata",
+      "filename": "epoch_04.json",
+      "bytes": 1355,
+      "sha256": "5c5cdc4749a7f916d59e9e30bc7f62fe93a56cff20c886833cf07a8fcf748b72"
+    },
+    "e020": {
+      "description": "sa_xlmr_seed2026 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2919,
+      "sha256": "9cc01d911f0f1061801d642e4a30e66600efbd46940f7c12ee0bc0eaca0a6c13"
+    },
+    "e021": {
+      "description": "sa_xlmr_seed2026 selected checkpoint metadata",
+      "filename": "epoch_05.json",
+      "bytes": 1390,
+      "sha256": "ba96a9c1107f169b6d0878c0ecdd8bb9eb565b1fa8611ece1ce51dc2f3e853d0"
+    },
+    "e022": {
+      "description": "sa_mbert_seed13 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2616,
+      "sha256": "7670557357b6e6d4346d1b52102d895b16ae1b3f70ab905bc8baddc7cff0abef"
+    },
+    "e023": {
+      "description": "sa_mbert_seed13 accepted selected-checkpoint validation report",
+      "filename": "FINAL_STATUS.json",
+      "bytes": 3617,
+      "sha256": "a0a2718ddcabcb06c6cc51bb5021a765d0d5f857e603c876b0f886321c3c2c63"
+    },
+    "e024": {
+      "description": "sa_mbert_seed42 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2618,
+      "sha256": "d4855138604a4d1e486634134d9aefd30b55c51020d4559b809f64795064d98a"
+    },
+    "e025": {
+      "description": "sa_mbert_seed42 accepted selected-checkpoint validation report",
+      "filename": "FINAL_STATUS.json",
+      "bytes": 3619,
+      "sha256": "68b06200b1b123c6324b59a05669bb73b8dbf9b22bb52789e74aa0bc04c6f047"
+    },
+    "e026": {
+      "description": "sa_mbert_seed2026 actual training configuration",
+      "filename": "CONFIG.lock.json",
+      "bytes": 2622,
+      "sha256": "14b42b6203862691a87b8a57cc31c876b6d990bdbf6b30fb9e2a96ea7fbed59d"
+    },
+    "e027": {
+      "description": "sa_mbert_seed2026 accepted selected-checkpoint validation report",
+      "filename": "FINAL_STATUS.json",
+      "bytes": 3621,
+      "sha256": "3086edfa22cdca89826f50b7a933fcf33b362abe1face27a5c4c923a9a31fd37"
+    },
+    "e028": {
+      "description": "ner_qwen_ordinary4 frozen native request package",
+      "filename": "ner_qwen_ordinary4.json",
+      "bytes": 13141096,
+      "sha256": "bfac22195d454f6d14c4b821affd378b15cf642d86fea414d989cd0ecee95977"
+    },
+    "e029": {
+      "description": "ner_qwen_ordinary4 observed model loading and environment receipt",
+      "filename": "5b366858eb30486f9da982c7e550679e.json",
+      "bytes": 6286,
+      "sha256": "a562787b352ece999bc201a746cdb81c35ef8fa41be5080ce50e51424d2a36dc"
+    },
+    "e030": {
+      "description": "ner_qwen_schema4 frozen native request package",
+      "filename": "ner_qwen_schema4.json",
+      "bytes": 13140109,
+      "sha256": "fe8dfc4072e931ad3b5514154b9c5674f895e4ae14ecd3716e65bef931091ec5"
+    },
+    "e031": {
+      "description": "ner_qwen_schema4 observed model loading and environment receipt",
+      "filename": "c38897a89a5d4d49aeea56216df740ae.json",
+      "bytes": 7202,
+      "sha256": "9d0b02cabda6c7e6aae9ff5781c970cd4d14766e955a16b92a77e94ba5a10855"
+    },
+    "e032": {
+      "description": "ner_sherkala_ordinary4 frozen native request package",
+      "filename": "ner_sherkala_ordinary4.json",
+      "bytes": 12611113,
+      "sha256": "74d1176cb9e8abe5d466ef23d3cd0f11f949eb4577083e7f88a07ef4f788cc96"
+    },
+    "e033": {
+      "description": "ner_sherkala_ordinary4 observed model loading and environment receipt",
+      "filename": "531bf17a157e4e85b43d4975ecfe824f.json",
+      "bytes": 5845,
+      "sha256": "5305a8f28ccb6355fa98172ec062d9a85779827fb25e8eede273a87d0531da58"
+    },
+    "e034": {
+      "description": "ner_sherkala_schema4 frozen native request package",
+      "filename": "ner_sherkala_schema4.json",
+      "bytes": 12610126,
+      "sha256": "0390087c384b1f5ce4ff7ba616205e5c86a1cb27c46ed668948b9dab5477b18b"
+    },
+    "e035": {
+      "description": "ner_sherkala_schema4 observed model loading and environment receipt",
+      "filename": "6941a98e7b8048929d4ae05745077374.json",
+      "bytes": 6759,
+      "sha256": "f1a54b5794021be0b68bf2d2809c3d00bdd37415e0b41b5e81409936973b4640"
+    },
+    "e036": {
+      "description": "sa_qwen_ordinary4 frozen native request package",
+      "filename": "sa_qwen_ordinary4.json",
+      "bytes": 3089957,
+      "sha256": "a3fe16a1b880e10ab77649249be29236caa31783ab8662068f379d2cde67b08f"
+    },
+    "e037": {
+      "description": "sa_qwen_ordinary4 observed model loading and environment receipt",
+      "filename": "72a3d3a49dd94a7c84664c3dad9a78bd.json",
+      "bytes": 6287,
+      "sha256": "7d408ac58a6565c6b351080fab254d40ddaec151f5c10d137121e6f08f9c63e1"
+    },
+    "e038": {
+      "description": "sa_sherkala_ordinary4 frozen native request package",
+      "filename": "sa_sherkala_ordinary4.json",
+      "bytes": 2995359,
+      "sha256": "3d8ee1f59b6efb6a2cd503c24b92f559e1db09882103447fdb6d18780a7910f3"
+    },
+    "e039": {
+      "description": "sa_sherkala_ordinary4 observed model loading and environment receipt",
+      "filename": "f1a2af44f3a54674bca4d3630a7e6891.json",
+      "bytes": 5844,
+      "sha256": "82d50eec01471ea23f66af0b8feb77ebd6f6294fcbdd2b54a31805b8d1c9aa6e"
+    },
+    "e040": {
+      "description": "Accepted Gemma RUNTIME_READY.json",
+      "filename": "RUNTIME_READY.json",
+      "bytes": 400,
+      "sha256": "1015340ebd65b91ab047c4dc7fd96484c701a710f2370b34d262904f955c9194"
+    },
+    "e041": {
+      "description": "Accepted Gemma RUNTIME_DEPENDENCY_AMENDMENT.json",
+      "filename": "RUNTIME_DEPENDENCY_AMENDMENT.json",
+      "bytes": 2111,
+      "sha256": "af58101e595d0c1292511a32d089ca16868c6aaa12eab2366302f390292d6632"
+    },
+    "e042": {
+      "description": "Accepted Gemma WEIGHTS_VERIFIED.json",
+      "filename": "WEIGHTS_VERIFIED.json",
+      "bytes": 305,
+      "sha256": "37588a61698613874682ab284366b0ad0f727758d205dde3d34743758aec0c74"
+    },
+    "e043": {
+      "description": "Gemma frozen training input templates",
+      "filename": "INPUTS_8.json",
+      "bytes": 40579,
+      "sha256": "f1ec4b9059fbdb5f555a463dd7c90cdcc836731527f6ebb377849edc1e7b5723"
+    },
+    "e044": {
+      "description": "Primary API frozen requests and generation configuration",
+      "filename": "PREPARED_REQUESTS.json",
+      "bytes": 5450283,
+      "sha256": "7eb9ef67e2830777a1923d90fd51da70afcea7cf6cdd2d091af4bab05edb4062"
+    },
+    "e045": {
+      "description": "Observed API model identity for the primary run",
+      "filename": "MODEL_IDENTITY.json",
+      "bytes": 170,
+      "sha256": "33a62d7d7d37e9f947b4707d588b90a78591f14fe397d5b9b03335efd6cffa92"
+    }
+  }
+}

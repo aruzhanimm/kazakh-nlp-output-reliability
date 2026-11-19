@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Frozen model identities and evaluation roles. Repository revisions are immutable commits; fine-tuned payload SHA256 values are separately bound for each seed. Schema4 applies to NER only. The API row has no verified immutable dated revision.}
+\label{tab:models}
+\centering\footnotesize
+\begin{tabular}{@{}p{37mm}p{72mm}p{56mm}@{}}
+\toprule
+Model & Pretrained/repository revision & Role\\
+\midrule
+XLM-R-base & \textnormal{e73636d4f797dec63c3081bb6ed5c7b0bb3f2089} & Task fine-tuning; three seeds/task\\
+mBERT-base-cased & \textnormal{3f076fdb1ab68d5b2880cb87a0886f315b8146f8} & Task fine-tuning; three seeds/task\\
+Qwen2.5-7B-Instruct & \textnormal{a09a35458c702b33eeacc393d103063234e8bc28} & Primary prompted; ordinary4/schema4\\
+Sherkala-8B-Chat & \textnormal{ab873dfe8b5c86598ed3ea9dcc548eb47a1e228f} & Primary prompted; ordinary4/schema4\\
+Gemma4-12B-it & \textnormal{43c9d014b231474fa7212dbb48a762566c2b255d} & Descriptive ordinary4 reference\\
+GPT-6.1-Sol & API alias; dated revision unverified & Descriptive ordinary4 reference\\
+\bottomrule
+\end{tabular}
+\end{table*}

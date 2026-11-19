@@ -1,0 +1,94 @@
+[
+  {
+    "task": "ner",
+    "model": "xlmr",
+    "seed": 13,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 3335915267,
+    "recorded_sha256": "d425e6249e38b76484caaa176d2a011042d4b8a8d5fb2bfffde0c23dd82e4ff6"
+  },
+  {
+    "task": "ner",
+    "model": "xlmr",
+    "seed": 42,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 3335806979,
+    "recorded_sha256": "d05698f8dbdfabe171dce2cb52f49bd57d0d1f5bc3b4bf61cb008a12b1e1141e"
+  },
+  {
+    "task": "ner",
+    "model": "xlmr",
+    "seed": 2026,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 3335806915,
+    "recorded_sha256": "5eafe14ba507b8a6d7b7ec654fefba72538bbf80964d677d518e4ac6d48206fc"
+  },
+  {
+    "task": "ner",
+    "model": "mbert",
+    "seed": 13,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 2133523907,
+    "recorded_sha256": "b60ca2a41c117a972f61526719617bfa995a082208da6dc22cc4c48cd822586b"
+  },
+  {
+    "task": "ner",
+    "model": "mbert",
+    "seed": 42,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 2133523907,
+    "recorded_sha256": "e64a6501479b991eee595f89db98a3c151a59e635d53a21fb62fa09cb5d42cd1"
+  },
+  {
+    "task": "ner",
+    "model": "mbert",
+    "seed": 2026,
+    "selected_epoch": 5,
+    "checkpoint_bytes_now": 2133523843,
+    "recorded_sha256": "0d576b28c7f46a4ad65283702c6680513fd4f9d9d2ce2cdd8d625a2ea25c3c7c"
+  },
+  {
+    "checkpoint_bytes_now": 3341506803,
+    "recorded_sha256": "67033b62b54d0d4e6cde9bd1ff3cfc74797e614d1049df3b78f594a9fbfb6362",
+    "task": "sa",
+    "model": "xlmr",
+    "seed": 13,
+    "selected_epoch": 3
+  },
+  {
+    "checkpoint_bytes_now": 3343080435,
+    "recorded_sha256": "2406c4785c4c5bca7e2df86258cbf3a7c44a647bb4731f5d5c0ba2c3c1561428",
+    "task": "sa",
+    "model": "xlmr",
+    "seed": 42,
+    "selected_epoch": 4
+  },
+  {
+    "recorded_sha256": "d79af4d1c7588204d499f8726ae1fc382843666a9afa4a9cbfd5add393f8d00b",
+    "task": "sa",
+    "model": "xlmr",
+    "seed": 2026,
+    "selected_epoch": 5
+  },
+  {
+    "recorded_sha256": "66f90d75df552fdddf8559ca798217db0de74efe93598f69d1fabc375fb3db72",
+    "task": "sa",
+    "model": "mbert",
+    "seed": 13,
+    "selected_epoch": 3
+  },
+  {
+    "recorded_sha256": "1201be9b69b11039bf147b9c025ca795cf84c1d49fde26a97cc23bd9bce1d2c1",
+    "task": "sa",
+    "model": "mbert",
+    "seed": 42,
+    "selected_epoch": 2
+  },
+  {
+    "recorded_sha256": "4db4b82cfd8d627dd91deb870aa46b267436af048d60ff5ac43a1396f7c45b06",
+    "task": "sa",
+    "model": "mbert",
+    "seed": 2026,
+    "selected_epoch": 2
+  }
+]

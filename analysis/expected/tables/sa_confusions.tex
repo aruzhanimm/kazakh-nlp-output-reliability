@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{SA confusion counts. For each gold class, predicted columns are negative (N), positive (P), and invalid (I). Rows retain all 500 examples and all three encoder seeds.}
+\label{tab:sa-confusions}
+\begin{tabular}{lrrrrrr}
+\toprule
+System & \multicolumn{3}{c}{Gold negative (94)} & \multicolumn{3}{c}{Gold positive (406)}\\\cmidrule(lr){2-4}\cmidrule(lr){5-7} & N & P & I & N & P & I\\
+\midrule
+XLM-R seed 13 & 63 & 31 & 0 & 26 & 380 & 0\\
+XLM-R seed 42 & 64 & 30 & 0 & 31 & 375 & 0\\
+XLM-R seed 2026 & 63 & 31 & 0 & 27 & 379 & 0\\
+mBERT seed 13 & 55 & 39 & 0 & 25 & 381 & 0\\
+mBERT seed 42 & 66 & 28 & 0 & 33 & 373 & 0\\
+mBERT seed 2026 & 62 & 32 & 0 & 28 & 378 & 0\\
+Qwen & 80 & 14 & 0 & 122 & 275 & 9\\
+Sherkala & 75 & 15 & 4 & 64 & 324 & 18\\
+Gemma 4 12B & 76 & 17 & 1 & 62 & 342 & 2\\
+GPT-6.1-Sol & 78 & 16 & 0 & 52 & 354 & 0\\
+\bottomrule
+\end{tabular}
+\end{table*}

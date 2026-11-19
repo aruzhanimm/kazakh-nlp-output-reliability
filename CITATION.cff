@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this research artifact and identify the version or commit used. The associated manuscript is unpublished."
+title: "Task Quality and Output Reliability in Kazakh Named Entity Recognition and Sentiment Analysis"
+type: software
+authors:
+  - family-names: "Kartam"
+    given-names: "Aruzhan"
+version: "0.4.0"
+date-released: "2026-11-19"
+repository-code: "https://github.com/aruzhanimm/kazakh-nlp-output-reliability"

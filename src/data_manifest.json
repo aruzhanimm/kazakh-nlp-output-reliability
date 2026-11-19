@@ -1,0 +1,77 @@
+{
+  "retrieved_on": "2026-10-29",
+  "files": [
+    {
+      "repo": "IS2AI/KazNERD",
+      "commit": "bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f",
+      "relative_path": "KazNERD/IOB2_train.txt",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazNERD/bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f/KazNERD/IOB2_train.txt",
+      "file_name": "IOB2_train.txt",
+      "bytes": 15984398,
+      "sha256": "e5a80f6d4bbff499a4bf7cbf96a169feb761411151fb45abebeaae06995ff647",
+      "dataset": "KazNERD",
+      "task": "ner",
+      "split": "train"
+    },
+    {
+      "repo": "IS2AI/KazNERD",
+      "commit": "bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f",
+      "relative_path": "KazNERD/IOB2_valid.txt",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazNERD/bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f/KazNERD/IOB2_valid.txt",
+      "file_name": "IOB2_valid.txt",
+      "bytes": 1979548,
+      "sha256": "29d584d1a0d9aca6d58b39eb8a93e154791d303ecff56ef93f12b3c889239bf1",
+      "dataset": "KazNERD",
+      "task": "ner",
+      "split": "valid"
+    },
+    {
+      "repo": "IS2AI/KazNERD",
+      "commit": "bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f",
+      "relative_path": "KazNERD/IOB2_test.txt",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazNERD/bd4333d0f5952b9fafb2ef2ac2fefa0ad3c0333f/KazNERD/IOB2_test.txt",
+      "file_name": "IOB2_test.txt",
+      "bytes": 1991014,
+      "sha256": "359a1f61f6a21280c6c47b4fde9a5adcd07411d62015aa6e32d940c51f163b7a",
+      "dataset": "KazNERD",
+      "task": "ner",
+      "split": "test"
+    },
+    {
+      "repo": "IS2AI/KazSAnDRA",
+      "commit": "d769cf7f7bd62b59f88915508d4bc062310b54d6",
+      "relative_path": "dataset/01_pc_train_ib.zip",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazSAnDRA/d769cf7f7bd62b59f88915508d4bc062310b54d6/dataset/01_pc_train_ib.zip",
+      "file_name": "01_pc_train_ib.zip",
+      "bytes": 6947915,
+      "sha256": "174103fab7d443b7d85346e0b5ecbc18034aa582fef1ff4ba6c3ef72ef674f90",
+      "dataset": "KazSAnDRA",
+      "task": "sa",
+      "split": "train"
+    },
+    {
+      "repo": "IS2AI/KazSAnDRA",
+      "commit": "d769cf7f7bd62b59f88915508d4bc062310b54d6",
+      "relative_path": "dataset/04_pc_valid.zip",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazSAnDRA/d769cf7f7bd62b59f88915508d4bc062310b54d6/dataset/04_pc_valid.zip",
+      "file_name": "04_pc_valid.zip",
+      "bytes": 872706,
+      "sha256": "1ba23a77f93291a02070554ec11446e2d1d56ead2d1fb702a59ae708867116a1",
+      "dataset": "KazSAnDRA",
+      "task": "sa",
+      "split": "valid"
+    },
+    {
+      "repo": "IS2AI/KazSAnDRA",
+      "commit": "d769cf7f7bd62b59f88915508d4bc062310b54d6",
+      "relative_path": "dataset/05_pc_test.zip",
+      "download_url": "https://raw.githubusercontent.com/IS2AI/KazSAnDRA/d769cf7f7bd62b59f88915508d4bc062310b54d6/dataset/05_pc_test.zip",
+      "file_name": "05_pc_test.zip",
+      "bytes": 867490,
+      "sha256": "cec729d4fd5dda6e1d73c3ce9d6e5feed01b24be79b8135bfb0a204e3f1e6451",
+      "dataset": "KazSAnDRA",
+      "task": "sa",
+      "split": "test"
+    }
+  ]
+}

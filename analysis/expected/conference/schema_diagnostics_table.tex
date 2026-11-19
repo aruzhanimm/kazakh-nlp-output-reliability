@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Matched NER decoding intervention. Syntax/root, contract and alignment columns count affected items out of 500 and can overlap. TP and FP count accepted typed entity spans against the unchanged benchmark; symptom counts are not additional false-positive penalties.}
+\label{tab:schema-diagnostics}
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & Syntax/root & Contract & Alignment & TP & FP\\
+\midrule
+Qwen ordinary & 141 & 129 & 103 & 63 & 280\\
+Qwen schema & 1 & 0 & 191 & 172 & 686\\
+Sherkala ordinary & 1 & 5 & 207 & 246 & 928\\
+Sherkala schema & 0 & 0 & 210 & 246 & 934\\
+\bottomrule
+\end{tabular}
+\end{table*}

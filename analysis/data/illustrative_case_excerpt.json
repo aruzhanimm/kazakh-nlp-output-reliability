@@ -1,0 +1,228 @@
+{
+  "status": "ACTUAL_AUTOMATED_ILLUSTRATIVE_EXCERPT",
+  "source_receipt_sha256": "cf7e84ea5816f9ae1b62b2130ddafb40ee161cdc3d142ad2cab1a4c69946bbaa",
+  "results_sha256": "7b4b65a2743bddc4eac3ca6882fa16a40575df57d51fee62472c72967cc02b4c",
+  "not_human_annotations": true,
+  "selection": "Shortest qualifying case then source ID within each category; all 100 reserved NER examples excluded. Post-hoc and not a prevalence estimate.",
+  "no_private_mapping_or_local_paths": true,
+  "cases": [
+    {
+      "category": "gemma",
+      "source_id": "ner:test:1931",
+      "tokens": [
+        "220",
+        "бала",
+        "болған",
+        "."
+      ],
+      "text_space_joined_original_tokens": "220 бала болған .",
+      "benchmark_spans": [
+        {
+          "start": 0,
+          "end_exclusive": 1,
+          "type": "CARDINAL",
+          "mention": "220"
+        }
+      ],
+      "outputs": [
+        {
+          "condition": "ner_gemma4_12b_ordinary4",
+          "raw_task_answer": "```json\n[\n  {\"mention\": \"220\", \"type\": \"CARDINAL\", \"occurrence\": 1}\n]\n```",
+          "raw_task_answer_sha256": "a4b4b799e37e7274da48619d984a18f6a1e06eb951387ec71e79741cfa7a3ffb",
+          "primary_spans": [],
+          "primary_counts_against_benchmark": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "parser_failed": true,
+          "failed": true,
+          "prespecified_fence_only_secondary_spans": [
+            {
+              "start": 0,
+              "end_exclusive": 1,
+              "type": "CARDINAL",
+              "mention": "220"
+            }
+          ],
+          "secondary_counts_against_benchmark": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      ]
+    },
+    {
+      "category": "qwen",
+      "source_id": "ner:test:1753",
+      "tokens": [
+        "Инфекция",
+        "3",
+        "италиялық",
+        "туристен",
+        "анықталған",
+        "."
+      ],
+      "text_space_joined_original_tokens": "Инфекция 3 италиялық туристен анықталған .",
+      "benchmark_spans": [
+        {
+          "start": 1,
+          "end_exclusive": 2,
+          "type": "CARDINAL",
+          "mention": "3"
+        },
+        {
+          "start": 2,
+          "end_exclusive": 3,
+          "type": "NORP",
+          "mention": "италиялық"
+        }
+      ],
+      "outputs": [
+        {
+          "condition": "ner_qwen_ordinary4",
+          "raw_task_answer": "[{\"mention\":\"Инфекция\",\"type\":\"DISEASE\",\"occurrence\":1},{\"mention\":\"италиялық\",\"phalt\":\"NORP\",\"occurrence\":1},{\"mention\":\"туристен\",\"phalt\":\"CONTACT\",\"occurrence\":1}]",
+          "raw_task_answer_sha256": "42eb7a75df30333571a2c325e3394022c1b01e76f3a02b5d246dd376e128e0e6",
+          "primary_spans": [
+            {
+              "start": 0,
+              "end_exclusive": 1,
+              "type": "DISEASE",
+              "mention": "Инфекция"
+            }
+          ],
+          "primary_counts_against_benchmark": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 2
+          },
+          "parser_failed": true,
+          "failed": true
+        },
+        {
+          "condition": "ner_qwen_schema4",
+          "raw_task_answer": "[{\"mention\":\"Инфекция\",\"type\":\"DISEASE\",\"occurrence\":1},{\"mention\":\"италиялық\",\"type\":\"NORP\",\"occurrence\":1},{\"mention\":\"туристен\",\"type\":\"PERSON\",\"occurrence\":1}]",
+          "raw_task_answer_sha256": "9536b51941bd854801f8b7f1a2cd51b5cbc2cd14901a6965eb50595c2c2cf740",
+          "primary_spans": [
+            {
+              "start": 0,
+              "end_exclusive": 1,
+              "type": "DISEASE",
+              "mention": "Инфекция"
+            },
+            {
+              "start": 2,
+              "end_exclusive": 3,
+              "type": "NORP",
+              "mention": "италиялық"
+            },
+            {
+              "start": 3,
+              "end_exclusive": 4,
+              "type": "PERSON",
+              "mention": "туристен"
+            }
+          ],
+          "primary_counts_against_benchmark": {
+            "tp": 1,
+            "fp": 2,
+            "fn": 1
+          },
+          "parser_failed": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "category": "sherkala",
+      "source_id": "ner:test:2430",
+      "tokens": [
+        "Миллиард",
+        "теңге",
+        "бөлініп",
+        "."
+      ],
+      "text_space_joined_original_tokens": "Миллиард теңге бөлініп .",
+      "benchmark_spans": [
+        {
+          "start": 0,
+          "end_exclusive": 2,
+          "type": "MONEY",
+          "mention": "Миллиард теңге"
+        }
+      ],
+      "outputs": [
+        {
+          "condition": "ner_sherkala_ordinary4",
+          "raw_task_answer": "[{\"mention\":\"Миллиард\",\"type\":\"MONEY\",\"occurrence\":1},{\"mention\":\"теңге\",\"type\":\"MONEY\",\"occurrence\":1}]",
+          "raw_task_answer_sha256": "0bd43f9095d7b25c9b8168dcb750b6bf4134f7df5919adc07448ddee073b27c2",
+          "primary_spans": [
+            {
+              "start": 0,
+              "end_exclusive": 1,
+              "type": "MONEY",
+              "mention": "Миллиард"
+            },
+            {
+              "start": 1,
+              "end_exclusive": 2,
+              "type": "MONEY",
+              "mention": "теңге"
+            }
+          ],
+          "primary_counts_against_benchmark": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 1
+          },
+          "parser_failed": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "category": "gpt",
+      "source_id": "ner:test:262",
+      "tokens": [
+        "Қазір",
+        "бұлардың",
+        "саны",
+        "алпыстан",
+        "асқан",
+        "."
+      ],
+      "text_space_joined_original_tokens": "Қазір бұлардың саны алпыстан асқан .",
+      "benchmark_spans": [
+        {
+          "start": 3,
+          "end_exclusive": 4,
+          "type": "CARDINAL",
+          "mention": "алпыстан"
+        }
+      ],
+      "outputs": [
+        {
+          "condition": "ner_gpt61sol_ordinary4",
+          "raw_task_answer": "[{\"mention\":\"алпыстан асқан\",\"type\":\"CARDINAL\",\"occurrence\":1}]",
+          "raw_task_answer_sha256": "c96475e273dacecfe2dc5adc2dfeae85ce1bac24b3e4f9fb6937647393e2b382",
+          "primary_spans": [
+            {
+              "start": 3,
+              "end_exclusive": 5,
+              "type": "CARDINAL",
+              "mention": "алпыстан асқан"
+            }
+          ],
+          "primary_counts_against_benchmark": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1
+          },
+          "parser_failed": false,
+          "failed": false
+        }
+      ]
+    }
+  ]
+}

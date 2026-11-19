@@ -1,0 +1,215 @@
+{
+  "scope": "Accepted final server source identities; code copied unchanged from the verified final export.",
+  "files": [
+    {
+      "path": "src/interface_pilot/alignment.py",
+      "sha256": "99f5056f8e5a76044af3c69ca0638b01a0e2756b232b7b2683381c56629fc9f9",
+      "bytes": 4869,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/ner_evidence_20261111/analysis/strict_ner.py",
+      "sha256": "4a2a7713e22a44e37a89e9842b778fba7f82f753d94cae44848cffb6a77e5c01",
+      "bytes": 3707,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/ner_pipeline_20261111/storage.py",
+      "sha256": "a700f4dca99d359d8c75558a3976be8fbe5f4d0ba84955aa97bdc4572398f0cd",
+      "bytes": 5604,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/pilot/scoring.py",
+      "sha256": "3d7619dc1a0405921cfe412375ca9f0218a7cdf52fa17b125f16ad535a791021",
+      "bytes": 5697,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/output_adapter.py",
+      "sha256": "947e6133b5d27a4d651681240edc6018372bf3f00df59209f799f1e145b65c91",
+      "bytes": 5835,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/HF_METADATA.json",
+      "sha256": "208ccc85fbcdf350f1e97ad6e2389d665fa37701d3061c45b06575d9d778af8c",
+      "bytes": 26218,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/INPUTS_8.json",
+      "sha256": "f1ec4b9059fbdb5f555a463dd7c90cdcc836731527f6ebb377849edc1e7b5723",
+      "bytes": 40579,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/RUNTIME_SOURCE_CHECK.json",
+      "sha256": "dcf21fd2481f6eaafeea543a1cc504e1ebc44464afd1bb5d67b2a6696b0fe3c6",
+      "bytes": 1168,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/dependency_amendment.py",
+      "sha256": "19c8489eeb0ccc4ceeb292f70cf2038a5a77df108cf09ac21c0d0511e7533e60",
+      "bytes": 5730,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/existing_alignment.py",
+      "sha256": "99f5056f8e5a76044af3c69ca0638b01a0e2756b232b7b2683381c56629fc9f9",
+      "bytes": 4869,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/existing_sa_scoring.py",
+      "sha256": "3d7619dc1a0405921cfe412375ca9f0218a7cdf52fa17b125f16ad535a791021",
+      "bytes": 5697,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/native_adapter.py",
+      "sha256": "da587b88621dd30e96ab09d3d528ec0d4336591f2c17ac8a572d2ffb2c9cf36e",
+      "bytes": 1183,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/run_final_gemma.py",
+      "sha256": "be931262b31370c78acece0d51aa673919b64ddf71dfd6e445a883350adc4cd4",
+      "bytes": 19221,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/run_pilot8.py",
+      "sha256": "b442352a0ca1b720a03034081c22348d707a86a808937691949d89e33b67f4cf",
+      "bytes": 9064,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/gemma/server_setup.py",
+      "sha256": "528bbc08cc002163bcdda24980d391df309fb953b38b4b69080c70f691306ac8",
+      "bytes": 9031,
+      "basis": "accepted final Freeze B gemma_runtime_sources"
+    },
+    {
+      "path": "src/interface_pilot/alignment.py",
+      "sha256": "99f5056f8e5a76044af3c69ca0638b01a0e2756b232b7b2683381c56629fc9f9",
+      "bytes": 4869,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/ner_evidence_20261111/analysis/strict_ner.py",
+      "sha256": "4a2a7713e22a44e37a89e9842b778fba7f82f753d94cae44848cffb6a77e5c01",
+      "bytes": 3707,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/ner_execution_prep_20261111/runner_review/evidence_assembly.py",
+      "sha256": "2c929ceb9f5f285e767b3b8a779850d994ed2e02834ed9ca245220bef2cbf4e8",
+      "bytes": 16031,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/ner_pipeline_20261111/native_inputs.py",
+      "sha256": "a4ee7ba47ecc2465b0b78db8d821523ffdc1eac9897811d496f6b55f0267baf6",
+      "bytes": 13983,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/ner_pipeline_20261111/storage.py",
+      "sha256": "a700f4dca99d359d8c75558a3976be8fbe5f4d0ba84955aa97bdc4572398f0cd",
+      "bytes": 5604,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/ner_runtime_20261111/execution_runtime.py",
+      "sha256": "bbffe8b12d01cafa35e6305a6af54e3d9983468a5f2d4f85d6a22868c8f2d0c2",
+      "bytes": 18355,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/pilot/scoring.py",
+      "sha256": "3d7619dc1a0405921cfe412375ca9f0218a7cdf52fa17b125f16ad535a791021",
+      "bytes": 5697,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/llm/final_local_llm.py",
+      "sha256": "5542f183d756225204ff2702f5b1547f09256aa471a58af252d546c446ae43ba",
+      "bytes": 25884,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/llm/prepare_common_panels.py",
+      "sha256": "eb6358eb62a56cb8b76259f895cf84f0122261bc58b12429af632a9e15a4d5c0",
+      "bytes": 14918,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/output_adapter.py",
+      "sha256": "947e6133b5d27a4d651681240edc6018372bf3f00df59209f799f1e145b65c91",
+      "bytes": 5835,
+      "basis": "accepted final Freeze B llm_runtime_sources"
+    },
+    {
+      "path": "src/data/derived/ner_labels.json",
+      "sha256": "71a0d1ef06362f94577aa1eef2c4a106f5a4312f92b39dfb3faad3cc8fbea8a9",
+      "bytes": 1333,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/pilot/common.py",
+      "sha256": "fbded5c4237ec49d110316a33e30e7d1c8de2c0632798f48541711813fde70ab",
+      "bytes": 4256,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/pilot/inputs.py",
+      "sha256": "4b862aab1f9870fb7fb8d86027456ec41af242a79e04b2f8a3cd0524bac9c62e",
+      "bytes": 6522,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/pilot/models.py",
+      "sha256": "28a2f53452660e5571a7a109194aa0145b61720d9ab9d50d63516692ac21d753",
+      "bytes": 2603,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/pilot/scoring.py",
+      "sha256": "3d7619dc1a0405921cfe412375ca9f0218a7cdf52fa17b125f16ad535a791021",
+      "bytes": 5697,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/encoder_runner.py",
+      "sha256": "22ef0943524f96a12a53f6266b68847b24d7b3c6fa7887ac1e9519502edeadca",
+      "bytes": 23062,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/stage_preflight/state.py",
+      "sha256": "f1a3ea7d12fa3e28a354f7eeb8d740c2229474e135e4775d745ba6555968bebb",
+      "bytes": 1727,
+      "basis": "accepted final Freeze B runtime_sources"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/llm/prepared_runtime_copy/hf_backend.py",
+      "sha256": "df4945ed83b0f563fd3377ddcd610eb9a355466cdb0160d6f181ae5b3d221eae",
+      "bytes": 27974,
+      "basis": "verified final server archive: accepted_local_runtime"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/llm/prepared_runtime_copy/escape_safe_ner_grammar.py",
+      "sha256": "0ccb5e46a05dee7146e0de875da758532e74e1b5036a9dc292692fb9ce33c33c",
+      "bytes": 3367,
+      "basis": "verified final server archive: accepted_local_runtime"
+    },
+    {
+      "path": "src/research_execution_20261112/final_evaluation/llm/prepared_runtime_copy/vendor/trace_schema.py",
+      "sha256": "1f0d0e4a90795efd8823e01a0620e0af616ba647458704bbb72f4cf564f2bed2",
+      "bytes": 5454,
+      "basis": "verified final server archive: accepted_local_runtime"
+    }
+  ]
+}

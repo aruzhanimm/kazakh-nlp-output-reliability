@@ -1,0 +1,1503 @@
+{
+  "scope": "Accepted primary common500 evaluation",
+  "conditions": [
+    {
+      "condition": "ner_qwen_ordinary4",
+      "task": "ner",
+      "shots": 4,
+      "configuration": {
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "generation_template": {
+          "_bos_token_tensor": 151643,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            151645,
+            151643
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 151645,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 151643,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            151645,
+            151643
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 768,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 151645,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": false,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 663,
+            "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+          },
+          "generation_config.json": {
+            "bytes": 243,
+            "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 3945441440,
+            "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 3864726352,
+            "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 3864726424,
+            "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 3556377672,
+            "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 27752,
+            "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+          }
+        },
+        "tokenizer_files": {
+          "added_tokens.json": {
+            "bytes": 629,
+            "sha256": "f0acedf99e19ec0a5b797ffbd0b94328172ccd90f7f385bbc521cda2701b03ab"
+          },
+          "chat_template.jinja": {
+            "bytes": 2561,
+            "sha256": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6"
+          },
+          "merges.txt": {
+            "bytes": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+          },
+          "special_tokens_map.json": {
+            "bytes": 644,
+            "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a"
+          },
+          "tokenizer.json": {
+            "bytes": 11421896,
+            "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4893,
+            "sha256": "5fd4cea2574beb6b70ba31582179880d331b723f5b5119ee67c29d45b983f7be"
+          },
+          "vocab.json": {
+            "bytes": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": false
+        }
+      },
+      "native_package_sha256": "bfac22195d454f6d14c4b821affd378b15cf642d86fea414d989cd0ecee95977",
+      "source_ids": [
+        "e028",
+        "e029",
+        "e001"
+      ]
+    },
+    {
+      "condition": "ner_qwen_schema4",
+      "task": "ner",
+      "shots": 4,
+      "configuration": {
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6",
+          "xgrammar": "0.2.9"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "generation_template": {
+          "_bos_token_tensor": 151643,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            151645,
+            151643
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 151645,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 151643,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            151645,
+            151643
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 768,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 151645,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": true,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 663,
+            "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+          },
+          "generation_config.json": {
+            "bytes": 243,
+            "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 3945441440,
+            "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 3864726352,
+            "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 3864726424,
+            "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 3556377672,
+            "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 27752,
+            "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+          }
+        },
+        "tokenizer_files": {
+          "added_tokens.json": {
+            "bytes": 629,
+            "sha256": "f0acedf99e19ec0a5b797ffbd0b94328172ccd90f7f385bbc521cda2701b03ab"
+          },
+          "chat_template.jinja": {
+            "bytes": 2561,
+            "sha256": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6"
+          },
+          "merges.txt": {
+            "bytes": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+          },
+          "special_tokens_map.json": {
+            "bytes": 644,
+            "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a"
+          },
+          "tokenizer.json": {
+            "bytes": 11421896,
+            "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4893,
+            "sha256": "5fd4cea2574beb6b70ba31582179880d331b723f5b5119ee67c29d45b983f7be"
+          },
+          "vocab.json": {
+            "bytes": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6",
+            "xgrammar": "0.2.9"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": true,
+          "grammar_implementation": {
+            "compiled_ebnf_sha256": "9df679d219c825920ed1c39f78fa201f17541f8d679fda94f00e6deb5add0b60",
+            "helper_source_sha256": "0ccb5e46a05dee7146e0de875da758532e74e1b5036a9dc292692fb9ce33c33c",
+            "implementation": "xgrammar_0.2.9_ner_escape_rule_v1",
+            "schema_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f"
+          }
+        }
+      },
+      "native_package_sha256": "fe8dfc4072e931ad3b5514154b9c5674f895e4ae14ecd3716e65bef931091ec5",
+      "source_ids": [
+        "e030",
+        "e031",
+        "e001"
+      ]
+    },
+    {
+      "condition": "ner_sherkala_ordinary4",
+      "task": "ner",
+      "shots": 4,
+      "configuration": {
+        "model_id": "inception42/Llama-3.1-Sherkala-8B-Chat",
+        "revision": "ab873dfe8b5c86598ed3ea9dcc548eb47a1e228f",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role']+'<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %} {% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}",
+        "chat_template_sha256": "3e6f718262296f719e9bb16b9c34b52422f48e54bb83a350bfdd5536e27511c9",
+        "generation_template": {
+          "_bos_token_tensor": 128000,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            128001,
+            128009
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 128001,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 128000,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            128001,
+            128009
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 768,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 128001,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": false,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "generation_config.json": {
+            "bytes": 111,
+            "sha256": "ae9c013449dab45501dd67d85b191b5d6068339c2eefd071cf542e04e71f1511"
+          },
+          "model-00001-of-00007.safetensors": {
+            "bytes": 4765158112,
+            "sha256": "a126414bb19809c19029f2d0e4f9bb595c6da85cd81f7531890db342980f7438"
+          },
+          "model-00002-of-00007.safetensors": {
+            "bytes": 4999813072,
+            "sha256": "5b6aa960d0c4069678c48c7362712141d8e81bacb94dc05ef3b04d0694328566"
+          },
+          "model-00003-of-00007.safetensors": {
+            "bytes": 4832007480,
+            "sha256": "1b80b238a9297391a47600bccb2422d97bb136dc1fc1c1422074c216e457d608"
+          },
+          "model-00004-of-00007.safetensors": {
+            "bytes": 4999813120,
+            "sha256": "d5ea171a58ed58c93c95bd558836f54e5b36dd9c1675e806cfcfa4dd2ea255eb"
+          },
+          "model-00005-of-00007.safetensors": {
+            "bytes": 4999813128,
+            "sha256": "adcde704fd6ae747c3fdf2f0e77b94b35636d7b3767987c769d62c3c1774637f"
+          },
+          "model-00006-of-00007.safetensors": {
+            "bytes": 4832007496,
+            "sha256": "46e958e3cffd92a3f474936011ecb15ed573f1d7d508956170bea1f8876f8632"
+          },
+          "model-00007-of-00007.safetensors": {
+            "bytes": 3724985928,
+            "sha256": "0b47f5833463b34589f48c824a5995772a94603453c18ad1ccf93164c5268582"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 23950,
+            "sha256": "f8b54090ca3e5a3b352f0eafe8b02bffcfc335cd9274f218c59609f01ed06c9e"
+          }
+        },
+        "tokenizer_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 9884,
+            "sha256": "33403d05c86de6d06b07883f26022da68437008344ea498c075b0cbb97e6430d"
+          },
+          "tokenizer.json": {
+            "bytes": 23105059,
+            "sha256": "18bcaf8bc0be4e8b3871429d65887b766bff6cf0531164062c75e6a0d42aebcf"
+          },
+          "tokenizer_config.json": {
+            "bytes": 5640146,
+            "sha256": "b02ad828efd66b3c080968c5477290b0b038c88c8fcb98fb6c5f94df7dd64def"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": false
+        }
+      },
+      "native_package_sha256": "74d1176cb9e8abe5d466ef23d3cd0f11f949eb4577083e7f88a07ef4f788cc96",
+      "source_ids": [
+        "e032",
+        "e033",
+        "e001"
+      ]
+    },
+    {
+      "condition": "ner_sherkala_schema4",
+      "task": "ner",
+      "shots": 4,
+      "configuration": {
+        "model_id": "inception42/Llama-3.1-Sherkala-8B-Chat",
+        "revision": "ab873dfe8b5c86598ed3ea9dcc548eb47a1e228f",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6",
+          "xgrammar": "0.2.9"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role']+'<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %} {% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}",
+        "chat_template_sha256": "3e6f718262296f719e9bb16b9c34b52422f48e54bb83a350bfdd5536e27511c9",
+        "generation_template": {
+          "_bos_token_tensor": 128000,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            128001,
+            128009
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 128001,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 128000,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            128001,
+            128009
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 768,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 128001,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": true,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "generation_config.json": {
+            "bytes": 111,
+            "sha256": "ae9c013449dab45501dd67d85b191b5d6068339c2eefd071cf542e04e71f1511"
+          },
+          "model-00001-of-00007.safetensors": {
+            "bytes": 4765158112,
+            "sha256": "a126414bb19809c19029f2d0e4f9bb595c6da85cd81f7531890db342980f7438"
+          },
+          "model-00002-of-00007.safetensors": {
+            "bytes": 4999813072,
+            "sha256": "5b6aa960d0c4069678c48c7362712141d8e81bacb94dc05ef3b04d0694328566"
+          },
+          "model-00003-of-00007.safetensors": {
+            "bytes": 4832007480,
+            "sha256": "1b80b238a9297391a47600bccb2422d97bb136dc1fc1c1422074c216e457d608"
+          },
+          "model-00004-of-00007.safetensors": {
+            "bytes": 4999813120,
+            "sha256": "d5ea171a58ed58c93c95bd558836f54e5b36dd9c1675e806cfcfa4dd2ea255eb"
+          },
+          "model-00005-of-00007.safetensors": {
+            "bytes": 4999813128,
+            "sha256": "adcde704fd6ae747c3fdf2f0e77b94b35636d7b3767987c769d62c3c1774637f"
+          },
+          "model-00006-of-00007.safetensors": {
+            "bytes": 4832007496,
+            "sha256": "46e958e3cffd92a3f474936011ecb15ed573f1d7d508956170bea1f8876f8632"
+          },
+          "model-00007-of-00007.safetensors": {
+            "bytes": 3724985928,
+            "sha256": "0b47f5833463b34589f48c824a5995772a94603453c18ad1ccf93164c5268582"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 23950,
+            "sha256": "f8b54090ca3e5a3b352f0eafe8b02bffcfc335cd9274f218c59609f01ed06c9e"
+          }
+        },
+        "tokenizer_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 9884,
+            "sha256": "33403d05c86de6d06b07883f26022da68437008344ea498c075b0cbb97e6430d"
+          },
+          "tokenizer.json": {
+            "bytes": 23105059,
+            "sha256": "18bcaf8bc0be4e8b3871429d65887b766bff6cf0531164062c75e6a0d42aebcf"
+          },
+          "tokenizer_config.json": {
+            "bytes": 5640146,
+            "sha256": "b02ad828efd66b3c080968c5477290b0b038c88c8fcb98fb6c5f94df7dd64def"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6",
+            "xgrammar": "0.2.9"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": true,
+          "grammar_implementation": {
+            "compiled_ebnf_sha256": "9df679d219c825920ed1c39f78fa201f17541f8d679fda94f00e6deb5add0b60",
+            "helper_source_sha256": "0ccb5e46a05dee7146e0de875da758532e74e1b5036a9dc292692fb9ce33c33c",
+            "implementation": "xgrammar_0.2.9_ner_escape_rule_v1",
+            "schema_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f"
+          }
+        }
+      },
+      "native_package_sha256": "0390087c384b1f5ce4ff7ba616205e5c86a1cb27c46ed668948b9dab5477b18b",
+      "source_ids": [
+        "e034",
+        "e035",
+        "e001"
+      ]
+    },
+    {
+      "condition": "sa_qwen_ordinary4",
+      "task": "sa",
+      "shots": 4,
+      "configuration": {
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "generation_template": {
+          "_bos_token_tensor": 151643,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            151645,
+            151643
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 151645,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 151643,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            151645,
+            151643
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 32,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 151645,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": false,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 663,
+            "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+          },
+          "generation_config.json": {
+            "bytes": 243,
+            "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 3945441440,
+            "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 3864726352,
+            "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 3864726424,
+            "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 3556377672,
+            "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 27752,
+            "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+          }
+        },
+        "tokenizer_files": {
+          "added_tokens.json": {
+            "bytes": 629,
+            "sha256": "f0acedf99e19ec0a5b797ffbd0b94328172ccd90f7f385bbc521cda2701b03ab"
+          },
+          "chat_template.jinja": {
+            "bytes": 2561,
+            "sha256": "8aa40ce145adb73cb3a75194dc0224702a95850ec5275cabb728496bbd749fc6"
+          },
+          "merges.txt": {
+            "bytes": 1671853,
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+          },
+          "special_tokens_map.json": {
+            "bytes": 644,
+            "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a"
+          },
+          "tokenizer.json": {
+            "bytes": 11421896,
+            "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4893,
+            "sha256": "5fd4cea2574beb6b70ba31582179880d331b723f5b5119ee67c29d45b983f7be"
+          },
+          "vocab.json": {
+            "bytes": 2776833,
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": false
+        }
+      },
+      "native_package_sha256": "a3fe16a1b880e10ab77649249be29236caa31783ab8662068f379d2cde67b08f",
+      "source_ids": [
+        "e036",
+        "e037",
+        "e001"
+      ]
+    },
+    {
+      "condition": "sa_sherkala_ordinary4",
+      "task": "sa",
+      "shots": 4,
+      "configuration": {
+        "model_id": "inception42/Llama-3.1-Sherkala-8B-Chat",
+        "revision": "ab873dfe8b5c86598ed3ea9dcc548eb47a1e228f",
+        "packages": {
+          "tokenizers": "0.22.2",
+          "torch": "2.10.0+cu128",
+          "transformers": "4.57.6"
+        },
+        "context_limit": 4096,
+        "memory_fraction": 0.6,
+        "seed": 13,
+        "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role']+'<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %} {% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}",
+        "chat_template_sha256": "3e6f718262296f719e9bb16b9c34b52422f48e54bb83a350bfdd5536e27511c9",
+        "generation_template": {
+          "_bos_token_tensor": 128000,
+          "_decoder_start_token_tensor": null,
+          "_eos_token_tensor": [
+            128001,
+            128009
+          ],
+          "_from_model_config": false,
+          "_pad_token_tensor": 128001,
+          "assistant_confidence_threshold": 0.4,
+          "assistant_early_exit": null,
+          "assistant_lookbehind": 10,
+          "bad_words_ids": null,
+          "begin_suppress_tokens": null,
+          "bos_token_id": 128000,
+          "cache_config": null,
+          "cache_implementation": null,
+          "constraints": null,
+          "decoder_start_token_id": null,
+          "disable_compile": false,
+          "diversity_penalty": 0.0,
+          "do_sample": false,
+          "dola_layers": null,
+          "early_stopping": false,
+          "encoder_no_repeat_ngram_size": 0,
+          "encoder_repetition_penalty": 1.0,
+          "eos_token_id": [
+            128001,
+            128009
+          ],
+          "epsilon_cutoff": 0.0,
+          "eta_cutoff": 0.0,
+          "exponential_decay_length_penalty": null,
+          "force_words_ids": null,
+          "forced_bos_token_id": null,
+          "forced_eos_token_id": null,
+          "guidance_scale": null,
+          "is_assistant": false,
+          "length_penalty": 1.0,
+          "low_memory": null,
+          "max_matching_ngram_size": null,
+          "max_new_tokens": 32,
+          "max_time": null,
+          "min_length": 0,
+          "min_new_tokens": null,
+          "min_p": null,
+          "no_repeat_ngram_size": 0,
+          "num_assistant_tokens": 20,
+          "num_assistant_tokens_schedule": "constant",
+          "num_beam_groups": 1,
+          "num_beams": 1,
+          "num_return_sequences": 1,
+          "output_attentions": false,
+          "output_hidden_states": false,
+          "output_logits": null,
+          "output_scores": false,
+          "pad_token_id": 128001,
+          "penalty_alpha": null,
+          "prefill_chunk_size": null,
+          "prompt_lookup_num_tokens": null,
+          "remove_invalid_values": false,
+          "renormalize_logits": false,
+          "repetition_penalty": 1.05,
+          "return_dict_in_generate": false,
+          "return_legacy_cache": null,
+          "sequence_bias": null,
+          "stop_strings": null,
+          "suppress_tokens": null,
+          "target_lookbehind": 10,
+          "temperature": 0.7,
+          "token_healing": false,
+          "top_k": 20,
+          "top_p": 0.8,
+          "transformers_version": "4.57.6",
+          "typical_p": 1.0,
+          "use_cache": true,
+          "watermarking_config": null
+        },
+        "raw_decode_kwargs": {
+          "clean_up_tokenization_spaces": false,
+          "skip_special_tokens": true
+        },
+        "schema": {
+          "compile_settings": {
+            "any_order": false,
+            "any_whitespace": true,
+            "strict_mode": true
+          },
+          "definition": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "mention": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "occurrence": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    "ADAGE",
+                    "ART",
+                    "CARDINAL",
+                    "CONTACT",
+                    "DATE",
+                    "DISEASE",
+                    "EVENT",
+                    "FACILITY",
+                    "GPE",
+                    "LANGUAGE",
+                    "LAW",
+                    "LOCATION",
+                    "MISCELLANEOUS",
+                    "MONEY",
+                    "NON_HUMAN",
+                    "NORP",
+                    "ORDINAL",
+                    "ORGANISATION",
+                    "PERCENTAGE",
+                    "PERSON",
+                    "POSITION",
+                    "PRODUCT",
+                    "PROJECT",
+                    "QUANTITY",
+                    "TIME"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mention",
+                "type",
+                "occurrence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "definition_sha256": "080722300a679f49f9a8cadb30d2c5d84227854fffd8bcba08ab9831773ef46f",
+          "enabled": false,
+          "property_order": [
+            "mention",
+            "type",
+            "occurrence"
+          ]
+        },
+        "model_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "generation_config.json": {
+            "bytes": 111,
+            "sha256": "ae9c013449dab45501dd67d85b191b5d6068339c2eefd071cf542e04e71f1511"
+          },
+          "model-00001-of-00007.safetensors": {
+            "bytes": 4765158112,
+            "sha256": "a126414bb19809c19029f2d0e4f9bb595c6da85cd81f7531890db342980f7438"
+          },
+          "model-00002-of-00007.safetensors": {
+            "bytes": 4999813072,
+            "sha256": "5b6aa960d0c4069678c48c7362712141d8e81bacb94dc05ef3b04d0694328566"
+          },
+          "model-00003-of-00007.safetensors": {
+            "bytes": 4832007480,
+            "sha256": "1b80b238a9297391a47600bccb2422d97bb136dc1fc1c1422074c216e457d608"
+          },
+          "model-00004-of-00007.safetensors": {
+            "bytes": 4999813120,
+            "sha256": "d5ea171a58ed58c93c95bd558836f54e5b36dd9c1675e806cfcfa4dd2ea255eb"
+          },
+          "model-00005-of-00007.safetensors": {
+            "bytes": 4999813128,
+            "sha256": "adcde704fd6ae747c3fdf2f0e77b94b35636d7b3767987c769d62c3c1774637f"
+          },
+          "model-00006-of-00007.safetensors": {
+            "bytes": 4832007496,
+            "sha256": "46e958e3cffd92a3f474936011ecb15ed573f1d7d508956170bea1f8876f8632"
+          },
+          "model-00007-of-00007.safetensors": {
+            "bytes": 3724985928,
+            "sha256": "0b47f5833463b34589f48c824a5995772a94603453c18ad1ccf93164c5268582"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 23950,
+            "sha256": "f8b54090ca3e5a3b352f0eafe8b02bffcfc335cd9274f218c59609f01ed06c9e"
+          }
+        },
+        "tokenizer_files": {
+          "config.json": {
+            "bytes": 888,
+            "sha256": "8b55a8d0ecedee4cc92769c94e788f118b96d711b523ae02c50e09a52249fe5d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 9884,
+            "sha256": "33403d05c86de6d06b07883f26022da68437008344ea498c075b0cbb97e6430d"
+          },
+          "tokenizer.json": {
+            "bytes": 23105059,
+            "sha256": "18bcaf8bc0be4e8b3871429d65887b766bff6cf0531164062c75e6a0d42aebcf"
+          },
+          "tokenizer_config.json": {
+            "bytes": 5640146,
+            "sha256": "b02ad828efd66b3c080968c5477290b0b038c88c8fcb98fb6c5f94df7dd64def"
+          }
+        },
+        "observed_runtime": {
+          "gpu_model": "NVIDIA RTX A6000",
+          "dtype": "bfloat16",
+          "attention": "eager",
+          "cuda": "12.8",
+          "packages": {
+            "tokenizers": "0.22.2",
+            "torch": "2.10.0+cu128",
+            "transformers": "4.57.6"
+          },
+          "deterministic_algorithms": true,
+          "quantized": null,
+          "schema_compiled": false
+        }
+      },
+      "native_package_sha256": "3d8ee1f59b6efb6a2cd503c24b92f559e1db09882103447fdb6d18780a7910f3",
+      "source_ids": [
+        "e038",
+        "e039",
+        "e001"
+      ]
+    }
+  ]
+}

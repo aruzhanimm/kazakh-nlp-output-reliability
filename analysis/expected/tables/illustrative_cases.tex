@@ -1,0 +1,19 @@
+% Actual archived cases, automatically selected; no human judgments or translations.
+\begin{table*}[t]
+\centering\footnotesize
+\caption{Post-hoc illustrations from actual archived NER answers. Source IDs are official test-row identities. Quotes retain source tokens and spacing. The benchmark spans are comparison targets, not new human adjudications.}
+\label{tab:illustrations}
+\begin{tabular}{@{}p{23mm}p{66mm}p{74mm}@{}}
+\toprule
+System / row & Source and benchmark & Observed output behavior\\
+\midrule
+Gemma / 1931 & {\raggedright \kz{220 бала болған .}\newline Benchmark: CARDINAL \kz{220}.\par} & {\raggedright The raw answer has one whole-answer JSON fence around the correct entity record. Strict parsing accepts no entities; the prespecified fence-only branch exactly matches the benchmark.\par}\\
+\addlinespace
+Qwen / 1753 & {\raggedright \kz{Инфекция 3 италиялық туристен анықталған .}\newline Benchmark: CARDINAL \kz{3}; NORP \kz{италиялық}.\par} & {\raggedright Ordinary output uses the wrong key ``phalt'' in two records; only the extra DISEASE \kz{Инфекция} is accepted. Schema decoding recovers NORP but also predicts extra DISEASE and PERSON spans and misses CARDINAL \kz{3}. This is a generation intervention, not passive repair.\par}\\
+\addlinespace
+Sherkala / 2430 & {\raggedright \kz{Миллиард теңге бөлініп .}\newline Benchmark: MONEY \kz{Миллиард теңге}.\par} & {\raggedright The ordinary output splits the expression into two MONEY spans. The JSON answer is accepted but disagrees with the benchmark span.\par}\\
+\addlinespace
+GPT / 262 & {\raggedright \kz{Қазір бұлардың саны алпыстан асқан .}\newline Benchmark: CARDINAL \kz{алпыстан}.\par} & {\raggedright The predicted CARDINAL span is \kz{алпыстан асқан}, a boundary disagreement with the corpus. No claim is made here that this resolves the linguistic ambiguity.\par}\\
+\bottomrule
+\end{tabular}
+\end{table*}

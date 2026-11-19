@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\footnotesize
+\caption{Descriptive diagnostics of primary accepted NER spans. Boundary F1 ignores type but still requires exact spans. The last column counts correct types only among exact boundary matches with a unique predicted type; it is not overall tagging accuracy.}
+\label{tab:boundary}
+\begin{tabular}{lrrr}
+\toprule
+System & Typed F1 & Boundary F1 & Type match\\
+\midrule
+Qwen ordinary & 13.68 & 19.11 & 63/88\\
+Qwen schema & 23.96 & 31.75 & 172/228\\
+Sherkala ordinary & 28.08 & 33.45 & 246/293\\
+Sherkala schema & 27.99 & 33.45 & 246/294\\
+Gemma 4 12B ordinary & 8.16 & 8.48 & 25/26\\
+GPT-6.1-Sol ordinary & 83.73 & 84.92 & 494/501\\
+\bottomrule
+\end{tabular}
+\end{table}

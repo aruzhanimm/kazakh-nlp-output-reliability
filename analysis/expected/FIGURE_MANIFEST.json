@@ -1,0 +1,29 @@
+{
+  "status": "PRESENTATION_FROM_VERIFIED_FIXED_ANALYSIS",
+  "source_results_sha256": "7b4b65a2743bddc4eac3ca6882fa16a40575df57d51fee62472c72967cc02b4c",
+  "source_complete_sha256": "565047a868fb131b28b1d9579227c8e0af01b9aba89d2f9ab1aedbddc91eb872",
+  "builder_sha256": "c1dacbb458d6a34cfc3e0004d6e94b814ba0ba64a8d2748eee11de71bee781e1",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "created_utc": "2026-11-14T11:38:34.078939+00:00",
+  "new_statistics_computed": false,
+  "per_type_encoder_cells": "arithmetic mean of three separate F1 values",
+  "final_test_data_read_directly": false,
+  "human_judgments_inferred": false,
+  "visual_review_pending": true,
+  "output_sha256": {
+    "main_results_table.tex": "2a11a39a87d2794cdef27108743f110ae110305580605cc9857d4f3d91a0e8af",
+    "modern_descriptive_intervals.pdf": "4f95f9c902a89dc26f95fcfe88f3aa0085eae95ff0f21b0ade75aee33dee6dec",
+    "modern_descriptive_intervals.png": "624d6c9c04ffc76fdde33a0fdd03721eb223a6a436ed8334fcbec716121eb16c",
+    "modern_descriptive_intervals.svg": "1a6d068a5b8561aa0bd82bc90fe5c980f33e44d8eefd063711e60426547c3ab6",
+    "ner_output_symptoms.pdf": "a9b3329b6c9266629b67f38326c61431d8680357351f2ce47e2ada65a5964185",
+    "ner_output_symptoms.png": "35660b651d76ef0ca83477b03fc5bf16fcb571f5f46c7318ec6788b6153eab08",
+    "ner_output_symptoms.svg": "1606ec9f362006952a9d119c6d1cddb760bc08a09075aee6421774f445c4ec94",
+    "ner_type_f1_support.pdf": "073c64e0c250d19e2fd3109bb1dc93d83e711d05dc40fd029222df0a9de04167",
+    "ner_type_f1_support.png": "55d2842240fb6c2fee677acc3a9c62a5cc4a89b87d9d5e5f73c0ac98df6e2490",
+    "ner_type_f1_support.svg": "7c7d9576fd31c41076b1472850173a6fe05338359264b9d246124bec670f9a6e",
+    "primary_paired_intervals.pdf": "3748d528694054b628be11eeb4282af8e5feea11515af2c88fa3cf0ed761a4af",
+    "primary_paired_intervals.png": "ef379c8c07e5180c7b63253d374e612094cbfccd044e3ed43c685ae71db1d57a",
+    "primary_paired_intervals.svg": "90e8a037c67ede911d0effd54c8444d95d64c28308247421e5a303db3a50e623"
+  }
+}
