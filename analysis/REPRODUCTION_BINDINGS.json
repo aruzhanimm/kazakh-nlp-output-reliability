@@ -5,6 +5,8 @@
   "evidence_table_builder_sha256": "c620b01cef3b6f7e62eef268c9e068160638efc1df0ddeca4488fd47ef7dd931",
   "illustration_builder_sha256": "46c80f90c9b094f2e73738034ad0a62851fbee6583e7f86664dfd41050eabb52",
   "illustrative_excerpt_sha256": "c3f32db5f2ea9e8034e614b3be99c8e0b326666b3f32bdd792101182319977df",
-  "scope": "Presentation reproduction: ten generated LaTeX tables across expanded and compact manuscripts, four plot families and nine original detailed CSV exports. No inference or raw re-scoring.",
-  "conference_table_builder_sha256": "153f28e75f7a5c9974a38246e427aa186ecd65c19d80731a93ec4117c686a1d5"
+  "scope": "Presentation reproduction: thirteen generated LaTeX tables, four analysis plot families, a compact paired-interval figure and methodology diagram, and nine original detailed CSV exports. No inference or raw re-scoring.",
+  "conference_table_builder_sha256": "153f28e75f7a5c9974a38246e427aa186ecd65c19d80731a93ec4117c686a1d5",
+  "dg2027_builder_sha256": "313a9852221965b749c77c9ac8dd7e229e38399b144a562f84a1b0f786f501b9",
+  "dg2027_presentation_values_sha256": "8a2686c668d20a3e9f8b8900a88ca0df9dc3855873a5c7dde90f7daf865b25e5"
 }

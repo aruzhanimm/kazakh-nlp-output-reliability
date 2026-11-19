@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Matched NER output diagnostics on 500 sentences.}
+\label{tab:schema-diagnostics}
+\begingroup\fontsize{8}{9.3}\selectfont
+\setlength{\tabcolsep}{3.2pt}\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+System & Syntax & Contract & Align. & TP & FP\\
+\midrule
+Qwen ordinary & 141 & 129 & 103 & 63 & 280\\
+Qwen schema & 1 & 0 & 191 & 172 & 686\\
+Sherkala ordinary & 1 & 5 & 207 & 246 & 928\\
+Sherkala schema & 0 & 0 & 210 & 246 & 934\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\columnwidth}\raggedright\fontsize{8}{9.3}\selectfont
+Syntax includes JSON syntax/root failures. Syntax, contract, and alignment columns count affected items and may overlap. TP/FP count accepted typed spans; diagnostic counts add no scoring penalties.
+\end{minipage}\endgroup
+\end{table}

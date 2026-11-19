@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{SA performance on 500 shared test reviews (\%).}
+\label{tab:sa-results}
+\begingroup\fontsize{8}{9.3}\selectfont
+\setlength{\tabcolsep}{3.2pt}\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+System & Macro F1 & Neg. F1 & Pos. F1 & Invalid\\
+\midrule
+XLM-R & 80.57 & 68.35 & 92.80 & 0\\
+mBERT & 79.39 & 66.33 & 92.45 & 0\\
+Qwen & 66.60 & 54.05 & 79.14 & 9\\
+Sherkala & 75.68 & 64.38 & 86.98 & 22\\
+Gemma 4 12B & 77.46 & 65.52 & 89.41 & 3\\
+GPT-6.1-Sol & 80.44 & 69.64 & 91.24 & 0\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\columnwidth}\raggedright\fontsize{8}{9.3}\selectfont
+Gold labels: 94 negative and 406 positive. Encoders: mean of three seed scores; each seed has zero invalid outputs. Invalid counts remain in the evaluation.
+\end{minipage}\endgroup
+\end{table}

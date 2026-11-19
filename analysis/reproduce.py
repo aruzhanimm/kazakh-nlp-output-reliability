@@ -47,5 +47,19 @@ if __name__ == '__main__':
         for p in (ROOT/'expected/conference').glob('*.tex'):
             if p.read_bytes()!=(conference/p.name).read_bytes():raise ValueError('Conference table differs: '+p.name)
         print('Two conference tables reproduced exactly; ten generated LaTeX tables match in total.')
+    if 'dg2027_builder_sha256' in b:
+        script = ROOT/'code/build_dg2027_assets.py'
+        if sha(script) != b['dg2027_builder_sha256']:
+            raise ValueError('Compact presentation builder changed')
+        expected = ROOT/'expected/dg2027'
+        if sha(expected/'PRESENTATION_VALUES.json') != b['dg2027_presentation_values_sha256']:
+            raise ValueError('Compact presentation numeric source changed')
+        dg2027 = output/'dg2027'
+        subprocess.run([sys.executable, str(script), '--results', str(ROOT/'data/RESULTS.json'),
+                        '--output', str(dg2027)], check=True)
+        for name in ('ner_results.tex', 'sa_results.tex', 'schema_diagnostics.tex', 'PRESENTATION_VALUES.json'):
+            if (expected/name).read_bytes() != (dg2027/name).read_bytes():
+                raise ValueError('Compact presentation differs: '+name)
+        print('Three additional compact tables and numeric figure values reproduced exactly; thirteen LaTeX tables match in total.')
     print('Main LaTeX table reproduced exactly; original detailed CSV hashes verified. Four figure families regenerated.')
     print('PDF creation timestamps/font rendering can prevent byte-identical image files; inspect their saved numeric source and rendered appearance.')

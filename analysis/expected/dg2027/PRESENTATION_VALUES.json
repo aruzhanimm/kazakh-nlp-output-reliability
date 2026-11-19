@@ -1,0 +1,323 @@
+{
+  "source_sha256": "7b4b65a2743bddc4eac3ca6882fa16a40575df57d51fee62472c72967cc02b4c",
+  "tables": {
+    "scale": "percent except integer counts",
+    "ner": [
+      {
+        "system": "XLM-R",
+        "condition_ids": [
+          "ner_xlmr_seed13",
+          "ner_xlmr_seed42",
+          "ner_xlmr_seed2026"
+        ],
+        "f1": 96.7188716809281,
+        "precision": 96.55288724441213,
+        "recall": 96.88581314878893,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "mBERT",
+        "condition_ids": [
+          "ner_mbert_seed13",
+          "ner_mbert_seed42",
+          "ner_mbert_seed2026"
+        ],
+        "f1": 96.54387610982623,
+        "precision": 96.4330032215726,
+        "recall": 96.65513264129181,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Qwen ordinary",
+        "condition_ids": [
+          "ner_qwen_ordinary4"
+        ],
+        "f1": 13.680781758957655,
+        "precision": 18.367346938775512,
+        "recall": 10.899653979238755,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Qwen schema",
+        "condition_ids": [
+          "ner_qwen_schema4"
+        ],
+        "f1": 23.955431754874652,
+        "precision": 20.04662004662005,
+        "recall": 29.757785467128027,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Sherkala ordinary",
+        "condition_ids": [
+          "ner_sherkala_ordinary4"
+        ],
+        "f1": 28.08219178082192,
+        "precision": 20.954003407155025,
+        "recall": 42.56055363321799,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Sherkala schema",
+        "condition_ids": [
+          "ner_sherkala_schema4"
+        ],
+        "f1": 27.986348122866893,
+        "precision": 20.847457627118644,
+        "recall": 42.56055363321799,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Gemma 4 12B strict",
+        "condition_ids": [
+          "ner_gemma4_12b_ordinary4"
+        ],
+        "f1": 8.156606851549755,
+        "precision": 71.42857142857143,
+        "recall": 4.325259515570934,
+        "branch": "strict_primary"
+      },
+      {
+        "system": "Gemma fence-only (secondary)",
+        "condition_ids": [
+          "ner_gemma4_12b_ordinary4"
+        ],
+        "branch": "prespecified_fence_only_secondary",
+        "precision": 63.78378378378379,
+        "recall": 61.245674740484425,
+        "f1": 62.48896734333628
+      },
+      {
+        "system": "GPT-6.1-Sol",
+        "condition_ids": [
+          "ner_gpt61sol_ordinary4"
+        ],
+        "f1": 83.72881355932203,
+        "precision": 82.05980066445183,
+        "recall": 85.46712802768167,
+        "branch": "strict_primary"
+      }
+    ],
+    "sa": [
+      {
+        "system": "XLM-R",
+        "condition_ids": [
+          "sa_xlmr_seed13",
+          "sa_xlmr_seed42",
+          "sa_xlmr_seed2026"
+        ],
+        "f1": 80.57490366485466,
+        "negative_f1": 68.35186253694214,
+        "positive_f1": 92.79794479276718,
+        "invalid": 0
+      },
+      {
+        "system": "mBERT",
+        "condition_ids": [
+          "sa_mbert_seed13",
+          "sa_mbert_seed42",
+          "sa_mbert_seed2026"
+        ],
+        "f1": 79.3905820607976,
+        "negative_f1": 66.33449251194783,
+        "positive_f1": 92.44667160964737,
+        "invalid": 0
+      },
+      {
+        "system": "Qwen",
+        "condition_ids": [
+          "sa_qwen_ordinary4"
+        ],
+        "f1": 66.59537235076803,
+        "negative_f1": 54.054054054054056,
+        "positive_f1": 79.13669064748201,
+        "invalid": 9
+      },
+      {
+        "system": "Sherkala",
+        "condition_ids": [
+          "sa_sherkala_ordinary4"
+        ],
+        "f1": 75.67877408762278,
+        "negative_f1": 64.37768240343348,
+        "positive_f1": 86.97986577181209,
+        "invalid": 22
+      },
+      {
+        "system": "Gemma 4 12B",
+        "condition_ids": [
+          "sa_gemma4_12b_ordinary4"
+        ],
+        "f1": 77.46450304259636,
+        "negative_f1": 65.51724137931035,
+        "positive_f1": 89.41176470588236,
+        "invalid": 3
+      },
+      {
+        "system": "GPT-6.1-Sol",
+        "condition_ids": [
+          "sa_gpt61sol_ordinary4"
+        ],
+        "f1": 80.4399852724595,
+        "negative_f1": 69.64285714285714,
+        "positive_f1": 91.23711340206185,
+        "invalid": 0
+      }
+    ],
+    "schema": [
+      {
+        "system": "Qwen ordinary",
+        "condition_id": "ner_qwen_ordinary4",
+        "syntax_or_root_items": 141,
+        "contract_items": 129,
+        "alignment_items": 103,
+        "tp": 63,
+        "fp": 280
+      },
+      {
+        "system": "Qwen schema",
+        "condition_id": "ner_qwen_schema4",
+        "syntax_or_root_items": 1,
+        "contract_items": 0,
+        "alignment_items": 191,
+        "tp": 172,
+        "fp": 686
+      },
+      {
+        "system": "Sherkala ordinary",
+        "condition_id": "ner_sherkala_ordinary4",
+        "syntax_or_root_items": 1,
+        "contract_items": 5,
+        "alignment_items": 207,
+        "tp": 246,
+        "fp": 928
+      },
+      {
+        "system": "Sherkala schema",
+        "condition_id": "ner_sherkala_schema4",
+        "syntax_or_root_items": 0,
+        "contract_items": 0,
+        "alignment_items": 210,
+        "tp": 246,
+        "fp": 934
+      }
+    ]
+  },
+  "primary_paired_intervals": [
+    {
+      "comparison_id": "Qwen_NER_schema4-minus-XLMR_seedmean",
+      "label": "NER: Qwen schema\nminus XLM-R",
+      "delta_percentage_points": -72.76343992605345,
+      "ci95_percentage_points": [
+        -76.47526208955759,
+        -69.05337339540402
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        -77.80941351385894,
+        -67.73275184324625
+      ]
+    },
+    {
+      "comparison_id": "Sherkala_NER_schema4-minus-XLMR_seedmean",
+      "label": "NER: Sherkala schema\nminus XLM-R",
+      "delta_percentage_points": -68.7325235580612,
+      "ci95_percentage_points": [
+        -72.17793351506103,
+        -65.29485304856513
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        -73.37803683446862,
+        -64.03709413470857
+      ]
+    },
+    {
+      "comparison_id": "Qwen_SA_ordinary4-minus-XLMR_seedmean",
+      "label": "SA: Qwen ordinary\nminus XLM-R",
+      "delta_percentage_points": -13.979531314086625,
+      "ci95_percentage_points": [
+        -18.73526747013738,
+        -9.20390190599503
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        -20.361687744359546,
+        -7.546619324875039
+      ]
+    },
+    {
+      "comparison_id": "Sherkala_SA_ordinary4-minus-XLMR_seedmean",
+      "label": "SA: Sherkala ordinary\nminus XLM-R",
+      "delta_percentage_points": -4.8961295772318785,
+      "ci95_percentage_points": [
+        -8.650143386536485,
+        -1.118177254291552
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        -9.933209036988561,
+        0.17389524032918557
+      ]
+    },
+    {
+      "comparison_id": "Qwen_NER_schema4-minus-ordinary4",
+      "label": "NER: Qwen\nschema minus ordinary",
+      "delta_percentage_points": 10.274649995916995,
+      "ci95_percentage_points": [
+        6.8143112379740565,
+        13.839237095205057
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        5.72922758453947,
+        15.040496491260761
+      ]
+    },
+    {
+      "comparison_id": "Sherkala_NER_schema4-minus-ordinary4",
+      "label": "NER: Sherkala\nschema minus ordinary",
+      "delta_percentage_points": -0.09584365795502481,
+      "ci95_percentage_points": [
+        -0.1973868724963285,
+        -0.01653196043173585
+      ],
+      "ci_bonferroni_K6_percentage_points": [
+        -0.23988946073653117,
+        0.0
+      ]
+    }
+  ],
+  "workflow": {
+    "width_pt": 252,
+    "height_pt": 210,
+    "blocks": [
+      {
+        "title": "1  DATA AND PROTOCOL",
+        "lines": [
+          "KazNERD sentences / KazSAnDRA reviews",
+          "Training and dev decisions frozen before test"
+        ]
+      },
+      {
+        "title": "2  SHARED FINAL PANELS",
+        "lines": [
+          "500 NER sentences + 500 SA reviews",
+          "Identical task panels across evaluated systems"
+        ]
+      },
+      {
+        "title": "3  INFERENCE",
+        "lines": [
+          "Encoders: three independently trained seeds",
+          "LLMs: ordinary prompting",
+          "Qwen / Sherkala NER: matched schema decoding"
+        ]
+      },
+      {
+        "title": "4  SCORING AND UNCERTAINTY",
+        "lines": [
+          "Gold labels used only for scoring",
+          "NER: exact spans; SA: binary macro-F1",
+          "Strict primary / fence-only secondary",
+          "Paired intervals; six primary contrasts"
+        ]
+      }
+    ]
+  }
+}

@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: "Kartam"
     given-names: "Aruzhan"
-version: "0.4.0"
+    orcid: "https://orcid.org/0009-0003-5720-3829"
+version: "0.4.1"
 date-released: "2026-11-19"
 repository-code: "https://github.com/aruzhanimm/kazakh-nlp-output-reliability"

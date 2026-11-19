@@ -21,7 +21,7 @@ python -m pip install -r requirements.txt
 python analysis/reproduce.py
 ```
 
-The script writes to a fresh `analysis/regenerated/` directory. It verifies the saved evidence bindings and nine CSV hashes, regenerates ten LaTeX tables, and compares those tables byte-for-byte with the expected outputs. It also regenerates four figure families: paired primary contrasts, descriptive reference-model contrasts, NER quality by entity type and support, and NER output-processing symptoms.
+The script writes to a fresh `analysis/regenerated/` directory. It verifies the saved evidence bindings and nine CSV hashes, regenerates thirteen LaTeX tables, and compares those tables byte-for-byte with the expected outputs. It also regenerates four figure families: paired primary contrasts, descriptive reference-model contrasts, NER quality by entity type and support, and NER output-processing symptoms. Version 0.4.1 also generates the compact paired-interval figure and methodology diagram, with three additional presentation tables from the same fixed results.
 
 The script stops if `regenerated/` already exists. Keep or rename an earlier output directory before another run. Figure-file timestamps and platform font rendering can differ; the saved numeric evidence and expected figures support comparison.
 

@@ -4,7 +4,7 @@ Research artifact for **Task Quality and Output Reliability in Kazakh Named Enti
 
 This project compares fine-tuned multilingual encoders with four-shot language models on **KazNERD** named entity recognition (NER) and **KazSAnDRA** binary sentiment analysis (SA). It separates task quality from two distinct output effects: constraints applied during generation and acceptance rules applied to already generated answers.
 
-**Author:** Kartam Aruzhan, Astana IT University · **Artifact version:** 0.4.0
+**Author:** Kartam Aruzhan, Astana IT University · **Artifact version:** 0.4.1
 
 [Download the standalone supplement](https://github.com/aruzhanimm/kazakh-nlp-output-reliability/releases/download/v0.4.0/kazakh_nlp_supplement.zip) · [Read its two-page guide](docs/SUPPLEMENTARY_GUIDE.pdf)
 
@@ -59,7 +59,15 @@ The [`evidence/`](evidence/) package provides saved scoring records and their do
 python analysis/reproduce.py
 ```
 
-This regenerates **10 LaTeX tables and four figure families** from the completed analysis and checks nine detailed CSV files. It writes to a fresh `analysis/regenerated/` directory and stops if that directory already exists. It does not generate new model answers or new bootstrap draws.
+This regenerates **13 LaTeX tables, four analysis figure families and a methodology diagram** from the completed analysis and checks nine detailed CSV files. It writes to a fresh `analysis/regenerated/` directory and stops if that directory already exists. It does not generate new model answers or new bootstrap draws.
+
+Version 0.4.1 adds three compact presentation tables and two figures from the **same unchanged `RESULTS.json`**; the ten earlier table outputs remain available. The original v0.4.0 supplement retains the same primary evidence. To generate only the new presentation into a fresh directory:
+
+```sh
+python analysis/code/build_dg2027_assets.py --results analysis/data/RESULTS.json --output analysis/regenerated/dg2027
+```
+
+Expected tables, figures and their numeric values are in [`analysis/expected/dg2027/`](analysis/expected/dg2027/). Choose a different fresh output directory if the full reproduction command has already created this one.
 
 The analysis implementation also has 23 software checks:
 
@@ -97,7 +105,7 @@ Citation metadata is provided in [`CITATION.cff`](CITATION.cff). A versioned rep
   author = {Kartam, Aruzhan},
   title = {Task Quality and Output Reliability in Kazakh Named Entity Recognition and Sentiment Analysis},
   year = {2026},
-  howpublished = {Research artifact, version 0.4.0},
+  howpublished = {Research artifact, version 0.4.1},
   url = {https://github.com/aruzhanimm/kazakh-nlp-output-reliability}
 }
 ```
